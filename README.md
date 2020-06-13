@@ -38,23 +38,28 @@ User profile:
 
 
 ## Models
-Local=
-Nombre: String,
-Contraseña: 
-Dirección: String
-Horario:  
-Menu:[ArrayDeElementosDeMenu]
-Logo:
 
+Local
+-Nombre: String
+-Contraseña: 
+-Dirección: String
+-Horario:  
+-Menu:[ArrayDeElementosDeMenu]
+-Logo:
+```
+```
 
-Elemento del Menú:
-categoria: String
-idLocal: String
-Nombre: String
-Precio: Number
-Imagen: 
+Elemento del Menú
+-categoria: String
+-idLocal: String
+-Nombre: String
+-Precio: Number
+-Imagen: 
+```
+```
 
-![Wiframes1]
+## Wiframe
+![Wiframes1](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframes1.png)
 
 ## Links
 KANBAN :  https://trello.com/b/52ZhFMBf/proyecto
