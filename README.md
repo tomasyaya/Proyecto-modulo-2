@@ -44,22 +44,22 @@ En fase avanzada usaremos la plataforma para construir una herramienta de gesti�
 
 ## Models:
 
-Local= {
+Local= 
 -Nombre: String,
 -Contraseña:
 -Dirección: String
 -Horario:  
 -Menu:[ArrayDeElementosDeMenu]
 -Logo:
-}
 
-Elemento del Menú: {
+
+Elemento del Menú: 
 -categoria: String
 -idLocal: String
 -Nombre: String
 -Precio: Number
 -Imagen:
-}
+
 
 ## Wiframes
 
