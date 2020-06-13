@@ -44,28 +44,28 @@ En fase avanzada usaremos la plataforma para construir una herramienta de gesti�
 
 ## Models:
 
-Local= 
--Nombre: String,
--Contraseña:
--Dirección: String
--Horario:  
--Menu:[ArrayDeElementosDeMenu]
--Logo:
+Local:
+- **Nombre: String**
+- **Contraseña**
+- **Dirección: String**
+- **Horario:**
+- **Menu:[ArrayDeElementosDeMenu]:**
+- **Logo:**
 ```
 ```
 
-Elemento del Menú: 
--categoria: String
--idLocal: String
--Nombre: String
--Precio: Number
--Imagen:
+Elemento del Menú:
+- **categoria: String**,
+- **idLocal: String**,
+- **Nombre: String**,
+- **Precio: String**,
+- **Imagen:**,
 ```
 ```
 
-## Wiframes
+## Wireframes
 
-![Wiframes2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframes1.png)
+![Wiframes2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframes2.png)
 
 ## Links
 
