@@ -65,7 +65,7 @@ Elemento del Menú:
 
 ## Wireframes
 
-![Wiframes2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframes2.png)
+![Wiframe2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframe2.png)
 
 ## Links
 
