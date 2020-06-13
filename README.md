@@ -44,6 +44,7 @@ En fase avanzada usaremos la plataforma para construir una herramienta de gesti�
 
 ## Models:
 
+<<<<<<< HEAD
 Local= 
 -Nombre: String,
 -Contraseña:
@@ -64,6 +65,30 @@ Elemento del Menú:
 ## Wiframes
 
 ![Wiframes1](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframes1.png)
+=======
+Local:
+- **Nombre: String**
+- **Contraseña**
+- **Dirección: String**
+- **Horario:**
+- **Menu:[ArrayDeElementosDeMenu]:**
+- **Logo:**
+```
+```
+
+Elemento del Menú:
+- **categoria: String**,
+- **idLocal: String**,
+- **Nombre: String**,
+- **Precio: String**,
+- **Imagen:**,
+```
+```
+
+## Wireframes
+
+![Wiframe2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframe2.png)
+>>>>>>> 8cd6c3f6c9c53ff4d36552d9de07a58bf4b3211c
 
 ## Links
 
