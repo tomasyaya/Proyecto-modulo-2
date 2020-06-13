@@ -38,27 +38,23 @@ User profile:
 
 
 ## Models
-
-Local
--Nombre: String
+Local=
+-Nombre: String,
 -Contraseña: 
 -Dirección: String
 -Horario:  
 -Menu:[ArrayDeElementosDeMenu]
 -Logo:
-```
-```
 
-Elemento del Menú
+
+Elemento del Menú:
 -categoria: String
 -idLocal: String
 -Nombre: String
 -Precio: Number
 -Imagen: 
-```
-```
 
-## Wiframe
+## Wiframes
 ![Wiframes1](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframes1.png)
 
 ## Links
