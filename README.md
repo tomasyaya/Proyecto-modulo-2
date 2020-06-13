@@ -11,30 +11,30 @@ Plataforma donde los locales que no dispongan de páginas web, puedan introducir
 En fase avanzada usaremos la plataforma para construir una herramienta de gestión para los locales, y contenidos extra a modo de red social para usuarios.
 
 ## User Stories
-- **Página Principal** -
-- **Registrarse** -
-- **Iniciar sesión** -
-- **Cerrar sesión** -
-- **Crear Menú** -
-- **Mostrar Menú** -
+- **Página Principal** 
+- **Registrarse** 
+- **Iniciar sesión** 
+- **Cerrar sesión** 
+- **Crear Menú** 
+- **Mostrar Menú** 
 
 
 ## Backlog
--Categorías
--Código QR
+-**Categorías**
+-**Código QR**
 
 
-User profile:
-- Ver perfil restaurante
-- Añadir imagenes al template del menú
+## User profile:
+- **Ver perfil restaurante**
+- **Añadir imagenes al template del menú**
 
 ## ROUTES:
 
--index => render página de inicio
-- /signup => render página de registro
-- /login => render página de login
-- /restaurante/ID => ver menú de restaurante concreto
-- /restaurante/ID/introducir menú => Formulario introducción elementos menú
+- **/index => render página de inicio**
+- **/signup => render página de registro**
+- **/login => render página de login**
+- **/restaurante/ID => ver menú de restaurante concreto**
+- **/restaurante/ID/introducir menú => Formulario introducción elementos menú**
 
 
 ## Models
