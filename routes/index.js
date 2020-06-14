@@ -3,7 +3,7 @@ const router  = express.Router();
 const saltRounds = 10
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
-const modeloUsuario = require('../models/modelo-usuario');
+const Usuario= require('../models/modelo-usuario');
 
 /* GET home page */
 router.get('/', (req, res, next) => {
