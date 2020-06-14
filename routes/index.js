@@ -18,12 +18,12 @@ router.get("/signup", (req, res) => res.render("auth/signup"))
 router.post("/signup", (req, res) => {
 
   const {
-    username,
+    nombre,
     email,
     password
   } = req.body
   //comprobracion de que todods los campos han sido introducidos
-  if (!username || !email || !password) {
+  if (!nombre || !email || !password) {
     res.render("auth/signup", {
       errorMessage: "Los campos username, email y contraseña son obligatorios"
     })
@@ -48,7 +48,7 @@ router.post("/signup", (req, res) => {
       console.log("La hash es", hashedPassword)
       //Crear usuario 
      Usuario.create({
-          username: username,
+          nombre: nombre,
           email: email,
           passwordHash: hashedPassword
         })
