@@ -4,7 +4,7 @@ const saltRounds = 10
 const Usuario = require("../models/modelo-usuario")
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
-const modeloUsuario = require('../models/modelo-usuario');
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {
@@ -54,7 +54,7 @@ router.post("/signup", (req, res) => {
         })
         .then(data => {
           console.log("Usuario creado con exito. Datos:", data)
-          res.redirect("/userProfile")
+         // res.redirect("/userProfile")
         })
         .catch(error => {
           //Error de validacion
