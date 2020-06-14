@@ -1,6 +1,7 @@
 const express = require('express');
 const router  = express.Router();
 const saltRounds = 10
+const Usuario = require("../models/modelo-usuario")
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
 const modeloUsuario = require('../models/modelo-usuario');
