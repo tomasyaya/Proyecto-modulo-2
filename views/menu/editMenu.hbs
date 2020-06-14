@@ -1,0 +1,17 @@
+<h2>EDITA TU MENU</h2>
+
+<form action="/menu/{{menu.id}}" method="POST">
+    <label for="">Nombre del menu</label>
+    <input type="text"  id="nombreMenu" name="nombreMenu" value="{{menu.nombreMenu}}">   
+    <button type="submit">Guardar</button>
+</form> 
+
+<br>
+
+<form action="/menu/{{menu.id}}/editar" method="POST">
+    <label for="">Elemento</label>
+    <input type="text"  id="elementoMenu" name="nombre">   
+    <label for="">Precio</label>
+    <input type="text"  id="precio" name="precio">  
+    <button type="submit">Guardar</button>
+</form> 
