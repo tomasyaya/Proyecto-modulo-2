@@ -30,7 +30,7 @@ router.get('/menu/:id/editar', (req, res, next) => {
 router.post('/menu/:id', (req, res, next)=>{
   const nombreMenu= req.body.nombreMenu;
   Menu.update({_id:req.params.id},{$set:{nombreMenu}},{ new: true })
-  .then(menu=>res.redirect('/menu'))
+  .then(menu=>res.redirect('/menu/:id/editar'))
   .catch(e=>console.log(e))
 })
 
@@ -39,5 +39,7 @@ router.post('/menu/:id/borrar', (req,res,next)=>{
   .then(menu=>res.redirect('/menu'))
   .catch(e=>console.log(e))
 });
+
+//TODO: hacer un router.delete 
 
 module.exports = router;
