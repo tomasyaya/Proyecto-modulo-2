@@ -67,7 +67,6 @@ Elemento del Menú:
 
 ![Wiframe2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframe2.png)
 
-
 ## Links
 
 KANBAN : https://trello.com/b/52ZhFMBf/proyecto
