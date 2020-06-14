@@ -4,8 +4,9 @@ const elementoMenuSchema = new Schema({
   nombre: {
     required: true,
     trim: true,
-    precio: Number
-  }
+    type: String
+  },
+   precio: Number
 })
 
 module.exports = model('elementoMenu', elementoMenuSchema)
