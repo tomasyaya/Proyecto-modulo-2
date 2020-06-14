@@ -4,7 +4,7 @@ const saltRounds = 10
 const Usuario = require("../models/modelo-usuario")
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
-const Usuario= require('../models/modelo-usuario');
+const Usuario = require('../models/modelo-usuario');
 
 
 /* GET home page */
@@ -49,7 +49,7 @@ router.post("/signup", (req, res) => {
       console.log("La hash es", hashedPassword)
       //Crear usuario 
      Usuario.create({
-          nombre: nombre,
+         nombre: nombre,
           email: email,
           passwordHash: hashedPassword
         })

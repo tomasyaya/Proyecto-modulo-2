@@ -77,8 +77,10 @@ Elemento del Menú:
 Restaurante
 ![Restaurantepng](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Restaurantepng.png)
 
-Usuario
-![Usuario](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Usuario.png)
+
+![Wiframe2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframe2.png)
+
+
 
 ## Links
 
