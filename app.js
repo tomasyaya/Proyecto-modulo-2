@@ -23,6 +23,9 @@ const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
 
 const app = express();
+const crearSession=require('./configs/session.config');
+crearSession(app);
+
 
 // Middleware Setup
 app.use(logger('dev'));
@@ -53,6 +56,9 @@ app.locals.title = 'Mybar';
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const menu = require('./routes/menu');
+app.use('/', menu);
 
 
 module.exports = app;
