@@ -6,7 +6,8 @@ const elementoMenuSchema = new Schema({
     trim: true,
     type: String
   },
-   precio: Number
+   precio: Number,
+   idMenu: String
 })
 
 module.exports = model('elementoMenu', elementoMenuSchema)

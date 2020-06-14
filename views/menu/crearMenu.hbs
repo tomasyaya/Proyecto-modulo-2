@@ -1,8 +1,21 @@
 <div id="form">
   <h2>Crea tu  Menu</h2>
   <form action="/menu" method="POST">
-    <label for="nombreMenu">Menú</label>
+    <label for="nombreMenu">Nombre del Menú</label>
     <input type="text" id="nombreMenu" name="nombreMenu" />
     <button type="submit">Agregar Elemento </button>
   </form>
 </div>
+
+<ul>
+{{#each menus}}
+<li>
+{{this.nombreMenu}}
+</li>
+<a href="/menu/{{this.id}}/editar">Editar</a>
+<form action="/menu/{{this._id}}/borrar" method="POST">
+<button type="submit">Borrar</button>
+</form>
+<br>
+{{/each}}
+</ul>
