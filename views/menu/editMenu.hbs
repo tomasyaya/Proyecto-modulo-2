@@ -7,6 +7,15 @@
 </form> 
 
 <br>
+<ul>
+{{#each elementoMenu}}
+<li>
+{{this.nombre}}
+{{this.precio}}
+</li>
+<br>
+{{/each}}
+</ul>
 
 <form action="/menu/{{menu.id}}/editar" method="POST">
     <label for="">Elemento</label>
