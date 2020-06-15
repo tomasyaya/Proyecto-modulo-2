@@ -75,7 +75,7 @@ Elemento del Menú:
 
 ## Wireframes
 Restaurante
-![Restaurantepng](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Restaurantepng.png)
+![restaurante1](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/restaurante1.png)
 
 
 ![Wiframe2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframe2.png)
