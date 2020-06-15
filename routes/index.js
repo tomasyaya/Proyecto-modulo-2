@@ -16,7 +16,7 @@ router.get("/user-Profile", (req, res) => {
   Usuario.find({userId: req.session.currentUser})
   .then(usuario => {
     console.log(usuario, req.session.currentUser)
-    res.render("auth/user-profile",{usuario: req.session.currentUser, usuario})
+    res.render("auth/user-profile",{usuario: req.session.currentUser})
   })
   .catch(error => console.log(error))
 })
