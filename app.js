@@ -8,7 +8,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
-
+//Conexion bases de datos
 mongoose
   .connect('mongodb://localhost/proyectomodulo2', {useNewUrlParser: true})
   .then(x => {
@@ -48,7 +48,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 
-// default value for title local
+// Titulo
 app.locals.title = 'Mybar';
 
 
