@@ -85,6 +85,7 @@ Restaurante
 ## Links
 
 KANBAN : https://trello.com/b/52ZhFMBf/proyecto
+ICONOS: Iconos diseñados por "https://icon54.com/"Pixel perfect from "https://www.flaticon.es/"
 
 ### Git
 

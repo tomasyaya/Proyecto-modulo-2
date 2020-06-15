@@ -5,4 +5,26 @@ body {
 a {
   color: #00B7FF; }
 
+ .homeTitle {
+  text-align: center;
+  background-color: cornflowerblue  ;
+ }
+ h4 {
+   text-align: center;
+   margin-top: 80px;
+   margin-bottom: 80px;
+ }
+ #navbar {
+  text-align: end;
+  list-style: none;
+ }
+ #homeContainer {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+ }
+ .homeCard {
+   text-align: center;
+   width: 30%;
+ }
 /*# sourceMappingURL=style.css.map */
