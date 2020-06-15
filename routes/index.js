@@ -4,12 +4,22 @@ const saltRounds = 10
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
 const Usuario = require('../models/modelo-usuario');
+const session = require('express-session')
 
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
+//Get user-profile
+router.get("/user-Profile", (req, res) => {
+  Usuario.find({userId: req.session.currentUser})
+  .then(usuario => {
+    console.log(usuario, req.session.currentUser)
+    res.render("auth/user-profile",{usuario: req.session.currentUser, usuario})
+  })
+  .catch(error => console.log(error))
+})
 
 //Ruta GET registro
 router.get("/signup", (req, res) => res.render("auth/signup"))
@@ -54,7 +64,7 @@ router.post("/signup", (req, res) => {
         })
         .then(data => {
           console.log("Usuario creado con exito. Datos:", data)
-         // res.redirect("/userProfile")
+          res.redirect("/user-Profile")
         })
         .catch(error => {
           //Error de validacion
@@ -79,5 +89,41 @@ router.post("/signup", (req, res) => {
 })
 //Ruta GET Inicio sesion
 router.get('/login', (req, res) => res.render('auth/login'))
+
+//Ruta POST inicio sesion
+router.post('/login', (req, res, next) => {
+  const { email, password } = req.body;
+   //comprobracion de que todods los campos han sido introducidos
+  if (email === '' || password === '') {
+    res.render('auth/login', {
+      errorMessage: 'Por favor introduzca ambos campos para continuar'
+    });
+    return;
+  }
+//Buscamos usuario por mail
+  Usuario.findOne({ email })
+    .then(usuario => {
+      if (!usuario) {
+        //si no hay usuario con ese mail, no esta registrado
+        res.render('auth/login', { errorMessage: 'Este Email no esta registrado, pruebe otro' });
+        return;
+        //comprobamos contraseña
+      } else if (bcrypt.compare(password, usuario.passwordHash)) {
+        req.session.currentUser = usuario
+        console.log(password, usuario.passwordHash)
+        console.log(bcrypt.compare(password, usuario.passwordHash))
+        res.redirect("user-profile")
+      } else {
+        // si la contraseña no es correcta, mostramos error
+        res.render('auth/login', { errorMessage: 'Contraseña incorrecta.' });
+      }
+    })
+    .catch(error => next(error));
+});
+
+router.post('/logout', (req,res,next)=>{
+  req.session.destroy();
+  res.redirect('/');
+});
 
 module.exports = router;
