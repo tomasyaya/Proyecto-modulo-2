@@ -5,26 +5,32 @@ body {
 a {
   color: #00B7FF; }
 
- .homeTitle {
+#navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.homeTitle {
   text-align: center;
-  background-color: cornflowerblue  ;
- }
- h4 {
-   text-align: center;
-   margin-top: 80px;
-   margin-bottom: 80px;
- }
- #navbar {
-  text-align: end;
-  list-style: none;
- }
- #homeContainer {
-   display: flex;
-   flex-direction: row;
-   justify-content: space-evenly;
- }
- .homeCard {
-   text-align: center;
-   width: 30%;
- }
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#homeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.homeCard {
+  text-align: center;
+  width: 30%;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+}
+
 /*# sourceMappingURL=style.css.map */
