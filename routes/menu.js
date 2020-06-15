@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const Menu = require('../models/modelo-menu');
 
 
+
 router.get('/menu', (req, res, next) => {
   Menu.find()
       .then(menus => {res.render('menu/crearMenu', { menus: menus });})
@@ -20,12 +21,12 @@ router.post('/menu', (req,res,next)=>{
   .catch(e=>console.log(e))
 })
 
-router.get('/menu/:id/editar', (req, res, next) => {    
-  Menu.findById(req.params.id)
-  .then(menu=>{res.render('menu/editMenu', {menu:menu}) })
-  .catch(e=>console.log(e))
+// router.get('/menu/:id/editar', (req, res, next) => {    
+//   Menu.findById(req.params.id)
+//   .then(menu=>{res.render('menu/editMenu', {menu:menu}) })
+//   .catch(e=>console.log(e))
 
-});
+// });
 
 router.post('/menu/:id', (req, res, next)=>{
   const nombreMenu= req.body.nombreMenu;
