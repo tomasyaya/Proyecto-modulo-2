@@ -1,3 +1,24 @@
 <p>Bienvenido {{usuario.nombre}}</p>
 
-<a href="/menu">Añadir Menu </a>
+<form action="/restaurante" method="POST">
+  <label for="nombre"><b>Nombre del restaurante</b></label>
+  <input type="text" id="nombreRestaurante" name="nombre" />
+  <br>
+  <p><b>Direccion</b></p>
+  <label for="calle">Calle</label>
+  <input type="text" id="calle" name="calle" />
+  <label for="numero">Numero</label>
+  <input type="text" id="numero" name="numero" />
+  <br>
+  <br>
+  <label for="horario">Horario</label>
+  <input type="text" id="horario" name="horario" />
+  <br>
+  <br>
+  {{!-- <label for="logo">Logo</label>
+  <input type="file" name="logo" >--}}
+  <button type="submit">Guardar Restaurante</button>
+</form>
+
+<br>
+<br>

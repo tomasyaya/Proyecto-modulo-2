@@ -19,7 +19,12 @@ const restauranteSchema = new Schema({
   },
   horario: String,
   menu: [String],
-  logo: Image
+  // logo:
+  // {
+  //   data: Buffer,
+  //   contentType: String
+  // },
+  userId: String
 })
 
 module.exports = model('Restaurante', restauranteSchema)

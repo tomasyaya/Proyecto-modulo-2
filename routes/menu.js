@@ -12,9 +12,9 @@ router.get('/menu', (req, res, next) => {
 });
 
 router.post('/menu', (req,res,next)=>{
-  const nombreMenu=req.body.nombreMenu;
-  const userId= req.session.currentUser;
-  Menu.create({nombreMenu:nombreMenu,useid_restaurante:userId})
+  const {nombreMenu, idRestaurante}=req.body;
+  //const userId= req.session.currentUser;
+  Menu.create({nombreMenu:nombreMenu,idRestaurante:idRestaurante})
   .then(menu=> {
     res.redirect('/menu')
   })

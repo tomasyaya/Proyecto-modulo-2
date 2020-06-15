@@ -2,7 +2,7 @@ const {Schema, model} = require('mongoose');
 
 const menuSchema = new Schema({
   nombreMenu: String,
-  id_restaurante: String,
+  idRestaurante: String,
   elementos: [String]
 })
 
