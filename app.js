@@ -62,5 +62,7 @@ app.use('/', menu);
 const elementoMenu = require('./routes/elementoMenu');
 app.use('/', elementoMenu);
 
+const restaurante = require('./routes/restaurante');
+app.use('/', restaurante);
 
 module.exports = app;
