@@ -19,3 +19,14 @@
 </form>
 
 
+
+<br>
+<br>
+
+{{#each restaurante}}
+<br>
+{{this.nombre}}
+<br>
+<a href="/restaurante/{{this.id}}">Añadir Menu </a>
+{{/each}}
+
