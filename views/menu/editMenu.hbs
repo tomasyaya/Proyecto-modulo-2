@@ -1,32 +1,36 @@
-<h2>EDITA TU MENU</h2>
+<h2 id="editMenuTitle">Edita tu menu : {{this.menu.nombreMenu}}</h2>
+<div id="center-container">
+    <form id="editName" action="/menu/{{idMenu}}" method="POST">
+        <label for=""><b> Nombre del menu</b></label>
+        <input type="text" id="nombreMenu" name="nombreMenu" value="">
+        <button type="submit">Guardar</button>
+    </form>
 
-<form action="/menu/{{idMenu}}" method="POST">
-    <label for="">Nombre del menu</label>
-    <input type="text"  id="nombreMenu" name="nombreMenu" value="{{menu.nombreMenu}}">   
-    <button type="submit">Guardar</button>
-</form> 
+    <br>
 
-<br>
-
-<form action="/elemento" method="POST">
-    <label for="">Elemento</label>
-    <input type="text"  id="elementoMenu" name="nombre">   
-    <label for="">Precio</label>
-    <input type="text"  id="precio" name="precio">  
-    <input type="hidden"  id="precio" name="idMenu" value="{{idMenu}}">  
-    <button type="submit">Guardar</button>
-</form> 
-
-<ul>
-{{#each elementosMenu}}
-<li>
-{{this.nombre}}
-{{this.precio}}
-<a href="/elemento/{{this._id}}/editar">Editar</a>
-<form action="/elemento/{{this._id}}/borrar" method="POST">
-<button type="submit">Borrar</button>
-</form>
-</li>
-<br>
-{{/each}}
+    <form id="editElementPrice" action="/elemento" method="POST">
+        <label for=""><b> Elemento</b></label>
+        <input type="text" id="elementoMenu" name="nombre">
+        <br>
+        <label for=""><b> Precio</b></label>
+        <input type="text" id="precio" name="precio">
+        <input type="hidden" id="precio" name="idMenu" value="{{idMenu}}">
+        <br>
+        <button type="submit">Guardar</button>
+    </form>
+</div>
+<ul id="element-listing">
+    {{#each elementosMenu}}
+    <div class="crudOpsContainer">
+    <li>
+        {{this.nombre}}
+        {{this.precio}} $</li>
+        <br>
+        <a class="editLink" href="/elemento/{{this._id}}/editar">Editar</a>
+        <form action="/elemento/{{this._id}}/borrar" method="POST">
+            <button type="submit">Borrar</button>
+        </form>
+    
+   </div>
+    {{/each}}
 </ul>

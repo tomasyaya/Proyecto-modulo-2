@@ -5,4 +5,155 @@ body {
 
 a {
   color: #00B7FF;
+
+  //HOME PAGE
+}
+#navbar {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.homeTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+.intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+#homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.homeCard {
+  text-align: center;
+  width: 30%;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+}
+.cardImg {
+  width: 25%;
+}
+
+// SIGN-UP PAGE
+#signupTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+
+#signup-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.signupElement {
+  font-size: larger;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+// LOGIN PAGE
+#loginTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+#login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.loginElement {
+  font-size: larger;
+  width: 30%; 
+  text-align: center;
+  margin-bottom: 5px;
+}
+// USER PROFILE
+#profileTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+
+#profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profileElement {
+  font-size: larger;
+  width: 30%; 
+  text-align: center;
+  margin-bottom: 5px;
+}
+//CREAR MENU
+#creaMenuTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+
+#creaMenu-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.creaMenuElement {
+  font-size: larger;
+  width: 30%; 
+  text-align: center;
+  margin-bottom: 15px;
+}
+#menu-listing {
+  text-align: center;
+  list-style: none;
+}
+.crudOpsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+#menuName {
+  margin-right: 20px;
+}
+.editLink {
+  margin-right: 10px;
+  margin-bottom: 15px;
+}
+
+//EDITA MENU
+#editMenuTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px;
+}
+#editName {
+text-align: center;
+}
+#editElementPrice {
+  text-align: center;
+}
+
+#element-listing {
+  text-align: center;
+  list-style: none;
 }
