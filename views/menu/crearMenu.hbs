@@ -1,9 +1,9 @@
 <div id="form">
   <h2>Crea tu  Menu</h2>
-  <form action="/menu" method="POST">
+  <form action="/menu/{{restaurante.id}}/crear" method="POST">
     <label for="nombreMenu">Nombre del Menú</label>
     <input type="text" id="nombreMenu" name="nombreMenu" />
-     <input type="hidden"  id="idRestuarante" name="idMenu" value="{{idRestaurante}}"> 
+     <input type="hidden"  id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}"> 
     <button type="submit">Guardar menu </button>
   </form>
 </div>

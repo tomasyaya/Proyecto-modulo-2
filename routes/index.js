@@ -4,7 +4,8 @@ const saltRounds = 10
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
 const Usuario = require('../models/modelo-usuario');
-const session = require('express-session')
+const session = require('express-session');
+const Restaurante = require('../models/modelo-restaurante');
 
 
 /* GET home page */
@@ -15,8 +16,12 @@ router.get('/', (req, res, next) => {
 router.get("/user-Profile", (req, res) => {
   Usuario.find({userId: req.session.currentUser})
   .then(usuario => {
-    console.log(usuario, req.session.currentUser)
-    res.render("auth/user-profile",{usuario: req.session.currentUser})
+    Restaurante.find({userId:req.session.currentUser})
+    .then(restaurante=>{
+      console.log(usuario, req.session.currentUser)
+      res.render("auth/user-profile",{usuario: req.session.currentUser, restaurante:restaurante})
+    })
+    .catch(e => console.log(e))
   })
   .catch(error => console.log(error))
 })
