@@ -1,24 +1,21 @@
-<p>Bienvenido {{usuario.nombre}}</p>
+<h2 id="profileTitle">Bienvenido {{usuario.nombre}}</h2>
 
-<form action="/restaurante" method="POST">
-  <label for="nombre"><b>Nombre del restaurante</b></label>
-  <input type="text" id="nombreRestaurante" name="nombre" />
-  <br>
-  <p><b>Direccion</b></p>
-  <label for="calle">Calle</label>
-  <input type="text" id="calle" name="calle" />
-  <label for="numero">Numero</label>
-  <input type="text" id="numero" name="numero" />
-  <br>
-  <br>
-  <label for="horario">Horario</label>
-  <input type="text" id="horario" name="horario" />
-  <br>
-  <br>
+<form id="profile-container" action="/restaurante" method="POST">
+  <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
+  <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
+  
+  <p class="profileElement"><b>Direccion</b></p>
+  <label class="profileElement" for="calle"><b>Calle</b></label>
+  <input class="profileElement" type="text" id="calle" name="calle" />
+  <label class="profileElement" for="numero"><b> Numero</b></label>
+  <input class="profileElement" type="text" id="numero" name="numero" />
+ 
+  <label class="profileElement" for="horario"><b> Horario</b></label>
+  <input class="profileElement" type="text" id="horario" name="horario" />
+  
   {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
-  <button type="submit">Guardar Restaurante</button>
+  <button class="profileElement" type="submit">Guardar Restaurante</button>
 </form>
 
-<br>
-<br>
+
