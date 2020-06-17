@@ -1,0 +1,15 @@
+{{#each restaurante}}
+<h1>{{this.nombre}}</h1>
+<br>
+{{/each}}
+
+{{#each menus}}
+<h2>{{this.nombre}}</h2>
+<ul>
+  {{#each this.elementos}}
+  <li>{{this.nombre}} ${{this.precio}}</li>
+  
+  {{/each}}
+</ul>
+<br>
+{{/each}}

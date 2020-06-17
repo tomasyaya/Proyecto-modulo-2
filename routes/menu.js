@@ -15,6 +15,8 @@ router.get('/restaurante/:id', (req, res, next) => {
     .catch(err => err)
 });
 
+
+
 router.post('/menu/:id/crear', (req, res, next) => {
   const nombreMenu = req.body.nombreMenu;
   const idRestaurante = req.params.id;
@@ -29,7 +31,6 @@ router.post('/menu/:id/crear', (req, res, next) => {
 //   Menu.findById(req.params.id)
 //   .then(menu=>{res.render('menu/editMenu', {menu:menu}) })
 //   .catch(e=>console.log(e))
-
 // });
 
 router.post('/menu/:id', (req, res, next) => {
