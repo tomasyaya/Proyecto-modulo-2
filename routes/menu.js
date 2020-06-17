@@ -39,9 +39,9 @@ router.post('/menu/:id', (req, res, next) => {
     .catch(e => console.log(e))
 })
 
-router.post('/menu/:id/borrar', (req, res, next) => {
+router.post('/restaurante/:id/borrar', (req, res, next) => {
   Menu.findByIdAndRemove(req.params.id)
-    .then(menu => res.redirect('/menu'))
+    .then(menu => res.redirect('/restaurante/:id'))
     .catch(e => console.log(e))
 });
 

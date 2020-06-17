@@ -2,11 +2,11 @@
 
 <div id="form">
 
-  <form id="creaMenu-container" action="/menu" method="POST">
+ {{!--<form id="creaMenu-container" action="/menu" method="POST">
     <label class="creaMenuElement" for="nombreMenu"><b> Nombre del Menú</b></label>
     <input class="creaMenuElement" type="text" id="nombreMenu" name="nombreMenu" />
     <input class="creaMenuElement" type="hidden"  id="idRestuarante" name="idMenu" value="{{idRestaurante}}"> 
-    <button class="creaMenuElement" type="submit"><b> Guardar menu </b></button>
+    <button class="creaMenuElement" type="submit"><b> Guardar menu </b></button>--}}
 
   <h2>Crea tu  Menu</h2>
   <form action="/menu/{{restaurante.id}}/crear" method="POST">
