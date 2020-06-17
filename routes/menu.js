@@ -7,23 +7,15 @@ const Menu = require('../models/modelo-menu');
 const Restaurante = require('../models/modelo-restaurante');
 
 //Ruta GET restaurante específico
-router.get('/restaurante/:id', (req, res, next) => {
-  Restaurante.findById(req.params.id)
-  console.log(req.params)
-    .then(restaurante =>
-      Menu.find({
-        idRestaurante: req.params.id
-      })
-      .then(menus => {
-        res.render('menu/crearMenu', {
-          menus: menus,
-          restaurante: restaurante
-        });
-      })
-      .catch(error => error)
-    )
-    .catch(error => error)
-});
+router.get('/restaurante/:id',async(req,res,next)=>{
+  const restaurante = await Restaurante.findById(req.params.id);
+  const menus= await Menu.find({idRestaurante: req.params.id});
+  res.render('menu/crearMenu', {
+    menus: menus,
+    restaurante: restaurante
+  });
+})
+
 
 // Ruta POST crear menú de restaurante
 router.post('/menu/:id/crear', (req, res, next) => {
@@ -37,13 +29,8 @@ router.post('/menu/:id/crear', (req, res, next) => {
       res.redirect(`/restaurante/${idRestaurante}`)
     })
     .catch(error => console.log(error))
-})
-//????????????
-// router.get('/menu/:id/editar', (req, res, next) => {    
-//   Menu.findById(req.params.id)
-//   .then(menu=>{res.render('menu/editMenu', {menu:menu}) })
-//   .catch(e=>console.log(e))
-// });
+});
+
 //Ruta POST para editar menú
 router.post('/menu/:id', (req, res, next) => {
   const nombreMenu = req.body.nombreMenu;
