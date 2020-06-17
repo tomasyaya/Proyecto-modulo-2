@@ -1,3 +1,4 @@
+//Esquema del usuario
 const {Schema,model} = require('mongoose')
 
 const usuarioSchema = new Schema({

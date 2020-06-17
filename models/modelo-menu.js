@@ -1,3 +1,4 @@
+//Esquema del menú
 const {Schema, model} = require('mongoose');
 
 const menuSchema = new Schema({
