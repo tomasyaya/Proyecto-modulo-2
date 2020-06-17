@@ -54,7 +54,8 @@ router.post('/elemento/:id/borrar', (req, res, next) => {
     .then(elementoMenu => res.redirect(`/menu/${elementoMenu.idMenu}/editar`))
     .catch(e => console.log(e))
 });
-// Ruta GET mostrar elemento específico del menú
+// Ruta GET mostrar elemento específico del menú 
+//acabado?????
 router.get('/elemento/:id/editar', (req, res, next) => {
 
 })
