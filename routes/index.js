@@ -1,5 +1,5 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const saltRounds = 10
 const mongoose = require("mongoose")
 const bcrypt = require("bcryptjs");
@@ -14,16 +14,24 @@ router.get('/', (req, res, next) => {
 });
 //Get user-profile
 router.get("/user-Profile", (req, res) => {
-  Usuario.find({userId: req.session.currentUser})
-  .then(usuario => {
-    Restaurante.find({userId:req.session.currentUser})
-    .then(restaurante=>{
-      console.log(usuario, req.session.currentUser)
-      res.render("auth/user-profile",{usuario: req.session.currentUser, restaurante:restaurante})
+  Usuario.find({
+      userId: req.session.currentUser
     })
-    .catch(e => console.log(e))
-  })
-  .catch(error => console.log(error))
+    .then(usuario => {
+      Restaurante.find({
+        userId: req.session.currentUser
+      })
+        .then(restaurante => {
+          console.log(usuario, req.session.currentUser)
+          console.log(session)
+          res.render("auth/user-profile", {
+            usuario: req.session.currentUser,
+            restaurante: restaurante
+          })
+        })
+        .catch(error => console.log(error))
+    })
+    .catch(error => console.log(error))
 })
 
 //Ruta GET registro
@@ -37,14 +45,15 @@ router.post("/signup", (req, res) => {
     email,
     password
   } = req.body
-  //comprobracion de que todods los campos han sido introducidos
+  //Comprobracion de que todos los campos han sido introducidos
   if (!nombre || !email || !password) {
     res.render("auth/signup", {
       errorMessage: "Los campos username, email y contraseña son obligatorios"
     })
     return
   }
-  //Validacion password fuerte
+  //Validacion password fuerte front-end 
+  //La contraseña debe contener al menos 6 caracteres, una mayúscula y un número
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
 
@@ -62,8 +71,8 @@ router.post("/signup", (req, res) => {
     .then(hashedPassword => {
       console.log("La hash es", hashedPassword)
       //Crear usuario 
-     Usuario.create({
-         nombre: nombre,
+      Usuario.create({
+          nombre: nombre,
           email: email,
           passwordHash: hashedPassword
         })
@@ -97,37 +106,47 @@ router.get('/login', (req, res) => res.render('auth/login'))
 
 //Ruta POST inicio sesion
 router.post('/login', (req, res, next) => {
-  const { email, password } = req.body;
-   //comprobracion de que todods los campos han sido introducidos
+  const {
+    email,
+    password
+  } = req.body;
+  //Comprobracion de que todods los campos han sido introducidos
   if (email === '' || password === '') {
     res.render('auth/login', {
       errorMessage: 'Por favor introduzca ambos campos para continuar'
     });
     return;
   }
-//Buscamos usuario por mail
-  Usuario.findOne({ email })
+  //Buscamos usuario por mail
+  Usuario.findOne({
+      email
+    })
     .then(usuario => {
       if (!usuario) {
-        //si no hay usuario con ese mail, no esta registrado
-        res.render('auth/login', { errorMessage: 'Este Email no esta registrado, pruebe otro' });
+        //Si no hay usuario con ese mail, no esta registrado. Cortarmos ejecución y mostramos error
+        res.render('auth/login', {
+          errorMessage: 'Este Email no esta registrado, pruebe otro'
+        });
         return;
-        //comprobamos contraseña
+        //Comprobración de contraseña
       } else if (bcrypt.compare(password, usuario.passwordHash)) {
         req.session.currentUser = usuario
         console.log(password, usuario.passwordHash)
         console.log(bcrypt.compare(password, usuario.passwordHash))
         res.redirect("user-profile")
       } else {
-        // si la contraseña no es correcta, mostramos error
-        res.render('auth/login', { errorMessage: 'Contraseña incorrecta.' });
+        // Si la contraseña no es correcta, mostramos error
+        res.render('auth/login', {
+          errorMessage: 'Contraseña incorrecta.'
+        });
       }
     })
     .catch(error => next(error));
 });
-
-router.post('/logout', (req,res,next)=>{
+//Ruta POST logout
+router.post('/logout', (req, res, next) => {
   req.session.destroy();
+  console.log(session)
   res.redirect('/');
 });
 

@@ -1,4 +1,6 @@
+<!-- TITULO -->
 <h2 id="editMenuTitle">Edita tu menu : {{this.menu.nombreMenu}}</h2>
+
 <div id="center-container">
     <form id="editName" action="/menu/{{this.menu.id}}" method="POST">
         <label for=""><b> Nombre del menu</b></label>
@@ -7,7 +9,7 @@
     </form>
 
     <br>
-
+<!-- FORMULARIO EDITAR ELEMENTO MENU -->
     <form id="editElementPrice" action="/elemento" method="POST">
         <label for=""><b> Elemento</b></label>
         <input type="text" id="elementoMenu" name="nombre">

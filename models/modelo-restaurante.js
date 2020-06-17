@@ -1,3 +1,4 @@
+//Esquema del restaurante
 const { Schema, model } = require('mongoose')
 
 const restauranteSchema = new Schema({
