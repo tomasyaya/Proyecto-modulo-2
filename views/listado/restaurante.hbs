@@ -4,10 +4,11 @@
 {{/each}}
 
 {{#each menus}}
-<h2>{{this.nombreMenu}}</h2>
+<h2>{{this.nombre}}</h2>
 <ul>
-  {{#each elementos}}
-  <li>{{this.name}}</li>
+  {{#each this.elementos}}
+  <li>{{this.nombre}} ${{this.precio}}</li>
+  
   {{/each}}
 </ul>
 <br>
