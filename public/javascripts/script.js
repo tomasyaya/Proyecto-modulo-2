@@ -12,6 +12,10 @@ $(document).ready(function(){
     $("#profile-container").removeClass("hidden");
   });
 
+  $(".irMenu").click(event=>{
+    let pin=$(".pinInput").val();
+    window.location.href = `/${pin}`
+  })
   // $.post('/api/restaurante/:id/editar', function(resultado){
 
   // })
