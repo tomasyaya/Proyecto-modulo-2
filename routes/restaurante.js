@@ -5,15 +5,6 @@ const router = new Router();
 const mongoose = require('mongoose');
 const Restaurante = require('../models/modelo-restaurante');
 
-//OJO!!!
-// router.get('/restaurante',(req,res,next)=>{
-//   Restaurante.find()
-//   .then(restaurante=>{
-//     res.render('restaurante/restaurante',{restaurante:restaurante})
-//   })
-//   .catch(e=>console.log(e))
-// })
-
 //Ruta POST crear restaurante
 router.post('/restaurante', async (req, res, next) => {
   try{
@@ -41,6 +32,10 @@ router.post('/restaurante', async (req, res, next) => {
   }
 })
 
+// router.post('/api/restaurante/:id/editar', async (req,res,next)=>{
+//  const restauEditado= await Restaurante.findByIdAndUpdate(req.params.id,{nombre:req.body.nombre})
+//   res.json({resultado:restauEditado})
+// })
 
 
 module.exports = router;
