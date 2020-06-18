@@ -48,8 +48,10 @@ router.get('/menu/:id/editar', (req, res, next) => {
 router.post('/elemento/:id/borrar', (req, res, next) => {
   ElementoMenu.findByIdAndRemove(req.params.id)
   
-    .then(elementoMenu => res.redirect(`/menu/${elementoMenu.idMenu}/editar`))
+    .then(elementoMenu => { res.redirect(`/menu/${elementoMenu.idMenu}/editar`)
     console.log("Elemento borrado con exito", elementoMenu )
+    })
+    
     .catch(e => console.log(e))
 });
 // Ruta GET mostrar elemento específico del menú 
