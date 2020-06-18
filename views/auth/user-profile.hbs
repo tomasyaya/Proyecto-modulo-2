@@ -1,7 +1,9 @@
 <!-- TITULO -->
 <h2 id="profileTitle">Bienvenido {{usuario.nombre}}</h2>
 <!-- FORMULARIO DE CREACION DE RESTAURANTE -->
-<form id="profile-container" action="/restaurante" method="POST">
+<button class="addRestaurante" type="submit">Añadir Restaurante</button>
+
+<form class="hidden" id="profile-container" action="/restaurante" method="POST">
   <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
   <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
   
@@ -27,6 +29,7 @@
 {{#each restaurante}}
 <br>
 {{this.nombre}}
+<button class="editarRestaurante" type="submit">Editar</button>
 <br>
 <a href="/restaurante/{{this.id}}">Añadir Menu </a>
 {{/each}}
