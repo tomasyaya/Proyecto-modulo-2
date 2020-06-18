@@ -23,14 +23,18 @@
 
 
 
-<br>
-<br>
 
 {{#each restaurante}}
-<br>
-{{this.nombre}}
-<button class="editarRestaurante" type="submit">Editar</button>
-<br>
-<a href="/restaurante/{{this.id}}">Añadir Menu </a>
+
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title">{{this.nombre}}</h3>
+    <p><b> Calle: </b>{{this.direccion.calle}} <b> Numero:</b> {{this.direccion.numero}}</p>
+    <p><b>Horario:</b> {{this.horario}}</p>
+    <a href="/restaurante/{{this.id}}" class="btn btn-primary">Añadir Menu</a>
+  </div>
+</div>
+
 {{/each}}
 
