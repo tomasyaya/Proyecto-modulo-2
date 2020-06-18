@@ -18,6 +18,11 @@ a {
   text-align: center;
   margin-bottom: 60px; }
 
+.pinSearch {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px; }
+
 #homeContainer {
   width: 100%;
   display: flex;
@@ -89,6 +94,9 @@ footer {
   text-align: center;
   margin-bottom: 5px; }
 
+.card {
+  text-align: center; }
+
 #creaMenuTitle {
   width: 100%;
   text-align: center;
@@ -138,5 +146,13 @@ footer {
 #element-listing {
   text-align: center;
   list-style: none; }
+
+.subTitle {
+  text-align: center;
+  margin-bottom: 3%; }
+
+#menuCreate {
+  text-align: center;
+  margin-bottom: 3%; }
 
 /*# sourceMappingURL=style.css.map */
