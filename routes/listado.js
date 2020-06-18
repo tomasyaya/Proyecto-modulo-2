@@ -6,21 +6,22 @@ const Restaurante = require('../models/modelo-restaurante');
 const ElementoMenu = require('../models/modelo-elemento-menu');
 const async = require('async')
 
-router.get('/listado', async (req, res, next) => {
-  try {
-    const restaurantes = await Restaurante.find();
-    res.render('listado/listado', { restaurantes: restaurantes });
-  }
-  catch (error) {
-    next(error)
-  }
-})
+//RUTA DE LISTADO PARA BUSQUEDA
+// router.get('/listado', async (req, res, next) => {
+//   try {
+//     const restaurantes = await Restaurante.find();
+//     res.render('listado/listado', { restaurantes: restaurantes });
+//   }
+//   catch (error) {
+//     next(error)
+//   }
+// })
 
 
-router.get('/listado/:id', async (req, res, next) => {
+router.get('/:pin', async (req, res, next) => {
   try{
-    const restaurante = await Restaurante.findById(req.params.id);
-    const menus = await Menu.find({ idRestaurante: req.params.id });
+    const restaurante = await Restaurante.findOne({pin:req.params.pin});
+    const menus = await Menu.find({ idRestaurante: restaurante.id });
     misMenus = [];
     for (let i = 0; i < menus.length; ++i) {
       let elementos = await ElementoMenu.find({ idMenu: menus[i].id })
