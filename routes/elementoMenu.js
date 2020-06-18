@@ -18,12 +18,9 @@ router.post('/elemento', (req, res, next) => {
     precio: precio,
     idMenu: idMenu
   })
-  console.log("Elemento del menu creado con exito: ", ElementoMenu.create({
-      nombre: nombre,
-      precio: precio,
-      idMenu: idMenu
-    }))
+  
     .then(menu => {
+      console.log("Elemento del menu creado con exito: ", menu )
       res.redirect(`/menu/${idMenu}/editar`)
     })
     .catch(error => console.log(error))
