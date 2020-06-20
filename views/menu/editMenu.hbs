@@ -14,7 +14,7 @@
         <label for=""><b> Elemento</b></label>
         <input type="text" id="elementoMenu" name="nombre">
         <br>
-        <label for=""><b> Precio</b></label>
+        <label for="" id="price-element"><b> Precio</b></label>
         <input type="text" id="precio" name="precio">
         <input type="hidden" id="precio" name="idMenu" value="{{idMenu}}">
         <br>
@@ -37,4 +37,4 @@
     {{/each}}
 </ul>
 
-    <a href="/restaurante/:id">Volver a mis menús</a>
+    <a href="/restaurante/{{menu.idRestaurante}}">Volver a mis menús</a>
