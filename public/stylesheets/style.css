@@ -5,8 +5,9 @@ body {
 a {
   color: #00B7FF; }
 
-#navbar {
-  color: cornflowerblue; }
+#boton-logout {
+  border: none;
+  margin-left: 15px; }
 
 .homeTitle {
   width: 100%;
@@ -155,8 +156,7 @@ footer {
   text-align: center;
   margin-bottom: 3%; }
 
-#boton-logout {
-  border: none;
-  margin-left: 15px; }
+#price-element {
+  margin-right: 20px; }
 
 /*# sourceMappingURL=style.css.map */

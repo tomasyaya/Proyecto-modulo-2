@@ -11,7 +11,7 @@ router.post('/restaurante', async (req, res, next) => {
     const { nombre, calle, numero, horario } = req.body;
     const userId = req.session.currentUser;
     const numeroRestaurantes = await Restaurante.find();
-    let pin=2000;
+    let pin=1000;
     if (numeroRestaurantes.length != 0) {
       let ordenados=numeroRestaurantes.sort((a, b)=>a.pin-b.pin);
       let total= ordenados.length;
