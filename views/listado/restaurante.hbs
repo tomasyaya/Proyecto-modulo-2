@@ -4,12 +4,17 @@
 {{/each}}
 
 {{#each menus}}
-<h2>{{this.nombre}}</h2>
-<ul>
-  {{#each this.elementos}}
-  <li>{{this.nombre}} ${{this.precio}}</li>
-  
-  {{/each}}
-</ul>
+<div class="menu-page">
+  <button class="menu-name" >{{this.nombre}}</button>
+  <div class="hidden menu-container">
+    {{#each this.elementos}}
+    <br>
+    {{this.nombre}} {{this.precio}} €
+    {{/each}}
+  </div>
+</div>
+
+
+
 <br>
 {{/each}}
