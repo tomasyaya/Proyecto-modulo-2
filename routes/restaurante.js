@@ -14,7 +14,9 @@ router.post('/restaurante', async (req, res, next) => {
     let pin=1000;
     if (numeroRestaurantes.length != 0) {
       let ordenados=numeroRestaurantes.sort((a, b)=>a.pin-b.pin);
+      console.log(ordenados)
       let total= ordenados.length;
+      console.log(total)
       let mayor=ordenados[total-1];
       pin= mayor.pin+1;
     }

@@ -1,7 +1,7 @@
 <!-- TITULO -->
 <h2 id="profileTitle">Bienvenido {{usuario.nombre}}</h2>
 <!-- FORMULARIO DE CREACION DE RESTAURANTE -->
-<button class="addRestaurante" type="submit">Añadir Restaurante</button>
+<button id="addRestaurantButton" class="addRestaurante" type="submit">Añadir Restaurante</button>
 
 <form class="hidden" id="profile-container" action="/restaurante" method="POST">
   <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
@@ -18,7 +18,7 @@
   
   {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
-  <button class="profileElement" type="submit">Guardar Restaurante</button>
+  <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
 </form>
 
 

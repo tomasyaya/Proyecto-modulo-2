@@ -44,6 +44,10 @@ footer{
 .cardImg {
   width: 25%;
 }
+.irMenu {
+  color: white;
+  background-color: cornflowerblue;
+}
 
 // SIGN-UP PAGE
 #signupTitle {
@@ -65,6 +69,10 @@ footer{
   text-align: center;
   margin-bottom: 5px;
 }
+#signupButton {
+  color: white;
+  background-color: cornflowerblue;
+}
 
 // LOGIN PAGE
 #loginTitle {
@@ -85,6 +93,11 @@ footer{
   text-align: center;
   margin-bottom: 5px;
 }
+#loginButton {
+  color: white;
+  background-color: cornflowerblue;
+}
+
 // USER PROFILE
 #profileTitle {
   width: 100%;
@@ -107,6 +120,14 @@ footer{
 }
 .card {
   text-align: center  ;
+}
+#saveRestaurantButton {
+  color: white;
+  background-color: cornflowerblue;
+}
+#addRestaurantButton {
+  color: white;
+  background-color: cornflowerblue;
 }
 //CREAR MENU
 #creaMenuTitle {
