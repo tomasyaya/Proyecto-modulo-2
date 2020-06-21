@@ -9,9 +9,9 @@ const elementoMenuSchema = new Schema({
     type: String
   },
    precio: Number,
-   idMenu: {
+   idCategoria: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Menu"
+    ref: "Categoria"
   }
 })
 

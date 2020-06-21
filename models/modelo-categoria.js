@@ -2,12 +2,12 @@
 const {Schema, model} = require('mongoose');
 const mongoose = require('mongoose');
 
-const menuSchema = new Schema({
-  nombreMenu: String,
+const categoriaSchema = new Schema({
+  nombreCategoria: String,
   idRestaurante: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Restaurante"
   }
 })
 
-module.exports = model('Menu', menuSchema)
+module.exports = model('Categoria', categoriaSchema)

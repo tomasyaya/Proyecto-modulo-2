@@ -2,13 +2,13 @@
     {{> navBarPartial}}
 </div>
 <!-- TITULO -->
-<h2 id="editMenuTitle">Edita tu menu : {{this.menu.nombreMenu}}</h2>
+<h2 id="editMenuTitle">Edita Categoria: {{this.categoria.nombreCategoria}}</h2>
 
 
 <div id="center-container">
-    <form id="editName" action="/menu/{{this.menu.id}}" method="POST">
-        <label for=""><b> Nombre del menu</b></label>
-        <input type="text" id="nombreMenu" name="nombreMenu" value="{{this.menu.nombreMenu}}">
+    <form id="editName" action="/menu/{{this.categoria.id}}" method="POST">
+        <label for=""><b> Nombre de la categoria</b></label>
+        <input type="text" id="nombreMenu" name="nombreCategoria" value="{{this.categoria.nombreCategoria}}">
         <button type="submit">Guardar</button>
     </form>
 
@@ -20,7 +20,7 @@
         <br>
         <label for="" id="price-element"><b> Precio</b></label>
         <input type="text" id="precio" name="precio">
-        <input type="hidden" id="precio" name="idMenu" value="{{idMenu}}">
+        <input type="hidden" id="categoria" name="idCategoria" value="{{this.categoria.id}}">
         <br>
         <button type="submit">Guardar</button>
     </form>
@@ -41,4 +41,4 @@
     {{/each}}
 </ul>
 
-<a href="/restaurante/{{menu.idRestaurante}}">Volver a mis menús</a>
+<a href="/restaurante/{{categoria.idRestaurante}}">Volver a mis categorias</a>
