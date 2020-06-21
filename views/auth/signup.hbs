@@ -1,18 +1,18 @@
 <!-- TITULO -->
-<h2 id="signupTitle">Registro</h2>
+<h2 class="Title">Registro</h2>
 <!-- FORMULARIO DE REGISTRO -->
 <div >
   <form  id="signup-container" action="/signup" method="POST">
     <label class="signupElement" for="input-username">Nombre de Usuario</label>
-    <input class="signupElement" type="text" id="input-username" name="nombre" placeholder="Nombre usuario" />
+    <input class="signupElement" type="text" id="input-username" name="nombre" placeholder="Introduzca su nombre" />
 
     <label class="signupElement" for="input-email">Email</label>
-    <input class="signupElement" type="email" id="input-email" name="email" placeholder="Email" />
+    <input class="signupElement" type="email" id="input-email" name="email" placeholder="Introduzca su Email" />
 
     <label class="signupElement" for="input-password">Contraseña</label>
     <input class="signupElement" type="password" name="password" id="input-password" placeholder="********" />
 
-    <button id="signupButton" class="signupElement" type="submit">Crear cuenta</button>
+    <button class="Button" class="signupElement" type="submit">Crear cuenta</button>
 
     {{!-- error message will be added here --}}
     {{#if errorMessage}}

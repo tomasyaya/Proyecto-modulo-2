@@ -12,11 +12,13 @@ a {
   border: none;
   margin-left: 15px;
 }
-.homeTitle {
+.Title {
   width: 100%;
   text-align: center;
   background-color: cornflowerblue;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
+  padding: 1%;
+  border-radius: 15px;
 }
 .intro {
   text-align: center;
@@ -32,55 +34,76 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+ 
+  
 }
 .homeCard {
   text-align: center;
   width: 30%;
+  background-color: cornflowerblue;
+  padding: 3%;
+  border-radius: 15px;
+  margin-bottom: 2%;
 }
 footer{
   position: fixed;
   bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: #222;
+  padding:1% ;
+  border-radius: 15px;
 }
 .cardImg {
   width: 25%;
 }
-.irMenu {
+#irMenu {
+  border-radius: 15px;
   color: white;
-  background-color: cornflowerblue;
+  background-color: #222;
+  border: none;
+  padding: 7px;
+}
+#pin {
+  border-radius: 15px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 3%;
+  margin-right: 3%;
 }
 
+
 // SIGN-UP PAGE
-#signupTitle {
-  width: 100%;
-  text-align: center;
-  background-color: cornflowerblue;
-  margin-bottom: 60px;
-}
 
 #signup-container {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  
+  padding: 2%;
+  border-radius: 15px;
 }
 .signupElement {
   font-size: larger;
   width: 30%;
   text-align: center;
   margin-bottom: 5px;
+  border-radius: 15px;
+  padding: 7px;
+ 
 }
-#signupButton {
+.Button {
+  margin-top: 2%;
+  width: 30%;
   color: white;
-  background-color: cornflowerblue;
+  background-color:#222;
+  border-radius: 15px;
+  padding: 7px;
 }
 
 // LOGIN PAGE
-#loginTitle {
-  width: 100%;
-  text-align: center;
-  background-color: cornflowerblue;
-  margin-bottom: 60px;
-}
+
 #login-container {
   width: 100%;
   display: flex;
@@ -89,22 +112,14 @@ footer{
 }
 .loginElement {
   font-size: larger;
-  width: 30%; 
+  width: 30%;
   text-align: center;
   margin-bottom: 5px;
-}
-#loginButton {
-  color: white;
-  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding: 7px;
 }
 
 // USER PROFILE
-#profileTitle {
-  width: 100%;
-  text-align: center;
-  background-color: cornflowerblue;
-  margin-bottom: 60px;
-}
 
 #profile-container {
   width: 100%;
@@ -128,6 +143,14 @@ footer{
 #addRestaurantButton {
   color: white;
   background-color: cornflowerblue;
+}
+#socialDistance {
+width: 30%;
+height: auto;  
+position:absolute;
+bottom:10px;
+right:20px
+
 }
 //CREAR MENU
 #creaMenuTitle {
