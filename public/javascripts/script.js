@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
 }, false);
 
 
-
 $(document).ready(function () {
 
   $(".addRestaurante").click(event => {
@@ -21,17 +20,25 @@ $(document).ready(function () {
     $(this).parent().find(".menu-container").toggleClass("hidden");
   });
 
-  // $(".button-name-editar").click(function (event) {
-  //   let $this=$(this);
-  //   let $box= $this.parent().parent().siblings(".form-container")
-  //   $box.find(".edit-container").toggleClass("hidden");
-  //   $(this).parent().find(".card-body").addClass("hidden");
-  // });
 
   $(".button-name-editar").click(function (event){
-    let popup = $("myPopup");
-    popup.toggleClass("show");
-  }
+    let $this=$(this);
+    let $box=$this.parent();
+    let nombre=$box.find(".card-title").text();
+    let calle=$box.find(".calle-text").text();
+    let numero=$box.find(".numero-text").text();
+    let horario=$box.find(".horario-text").text();
+    let formulario= $(".edit-container");
+    formulario.find("#nombreRestauranteEdit").val(nombre); 
+    formulario.find("#calleRestauranteEdit").val(calle); 
+    formulario.find("#numeroRestauranteEdit").val(numero); 
+    formulario.find("#horarioRestauranteEdit").val(horario); 
+    let id = $(this).parent().find(".id-editar").val();
+    formulario.attr("action", `/api/restaurante/${id}/editar`);
+
+
+
+  })
 
   
   
