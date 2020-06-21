@@ -19,7 +19,6 @@ const restauranteSchema = new Schema({
     },
   },
   horario: String,
-  menu: [String],
   pin:Number, 
   // logo:
   // {

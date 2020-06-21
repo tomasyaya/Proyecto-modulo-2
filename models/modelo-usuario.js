@@ -21,8 +21,7 @@ const usuarioSchema = new Schema({
   passwordHash: {
     type: String,
     required: [true, "La contraseña es un campo requerido :) ."]
-  },
-  restaurantes: [String]
+  }
 })
 
 module.exports = model('Usuario', usuarioSchema)
