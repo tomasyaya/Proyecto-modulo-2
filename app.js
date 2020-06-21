@@ -24,6 +24,10 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 const crearSession=require('./configs/session.config');
 crearSession(app);
+app.use(function (req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 
 
 // Middleware Setup
