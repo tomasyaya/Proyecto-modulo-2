@@ -1,5 +1,9 @@
+<div>
+    {{> navBarPartial}}
+</div>
 <!-- TITULO -->
 <h2 id="editMenuTitle">Edita tu menu : {{this.menu.nombreMenu}}</h2>
+
 
 <div id="center-container">
     <form id="editName" action="/menu/{{this.menu.id}}" method="POST">
@@ -9,7 +13,7 @@
     </form>
 
     <br>
-<!-- FORMULARIO EDITAR ELEMENTO MENU -->
+    <!-- FORMULARIO EDITAR ELEMENTO MENU -->
     <form id="editElementPrice" action="/elemento" method="POST">
         <label for=""><b> Elemento</b></label>
         <input type="text" id="elementoMenu" name="nombre">
@@ -24,17 +28,17 @@
 <ul id="element-listing">
     {{#each elementosMenu}}
     <div class="crudOpsContainer">
-    <li>
-        {{this.nombre}}
-        {{this.precio}} $</li>
+        <li>
+            {{this.nombre}}
+            {{this.precio}} $</li>
         <br>
         <a class="editLink" href="/elemento/{{this._id}}/editar">Editar</a>
         <form action="/elemento/{{this._id}}/borrar" method="POST">
             <button type="submit">Borrar</button>
         </form>
-    
-   </div>
+
+    </div>
     {{/each}}
 </ul>
 
-    <a href="/restaurante/{{menu.idRestaurante}}">Volver a mis menús</a>
+<a href="/restaurante/{{menu.idRestaurante}}">Volver a mis menús</a>

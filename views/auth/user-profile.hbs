@@ -1,89 +1,93 @@
+{{> navBarPartial}}
 <!-- TITULO -->
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
 <!-- FORMULARIO DE CREACION DE RESTAURANTE -->
-<button id="addRestaurantButton" class="addRestaurante" type="submit">Añadir Restaurante</button>
+<div class="container">
+  <button id="addRestaurantButton" class="addRestaurante" type="submit">Añadir Restaurante</button>
 
-<form class="hidden" id="profile-container" action="/restaurante" method="POST">
-  <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
-  <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
+  <form class="hidden" id="profile-container" action="/restaurante" method="POST">
+    <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
+    <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
 
-  <p class="profileElement"><b>Direccion</b></p>
-  <label class="profileElement" for="calle"><b>Calle</b></label>
-  <input class="profileElement" type="text" id="calle" name="calle" />
-  <label class="profileElement" for="numero"><b> Numero</b></label>
-  <input class="profileElement" type="text" id="numero" name="numero" />
+    <p class="profileElement"><b>Direccion</b></p>
+    <label class="profileElement" for="calle"><b>Calle</b></label>
+    <input class="profileElement" type="text" id="calle" name="calle" />
+    <label class="profileElement" for="numero"><b> Numero</b></label>
+    <input class="profileElement" type="text" id="numero" name="numero" />
 
-  <label class="profileElement" for="horario"><b> Horario</b></label>
-  <input class="profileElement" type="text" id="horario" name="horario" />
+    <label class="profileElement" for="horario"><b> Horario</b></label>
+    <input class="profileElement" type="text" id="horario" name="horario" />
 
-  {{!-- <label for="logo">Logo</label>
+    {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
-  <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
-</form>
+    <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
+  </form>
 
 
 
 
 
-<div class="row">
+  <div class="row">
 
-  {{#each restaurante}}
-  <div class="col-6 col-md-4">
-    <div class="card text-center">
-      <div class="card-body">
-        <h3 class="card-title">{{this.nombre}}</h3>
-        <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
-            class="numero-text">{{this.direccion.numero}}</span></p>
-        <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
-        <p><b>PIN:</b> {{this.pin}}</p>
-        <a href="/restaurante/{{this.id}}" class="btn btn-primary">Añadir Menu</a>
-        <input class="id-editar hidden" value="{{this.id}}">
-        <button class="btn button-name-editar" data-toggle="modal" data-target="#exampleModal"><i
-            class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
-        <form action="/api/restaurante/{{this.id}}/borrar" method="POST">
-          <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
-        </form>
+    {{#each restaurante}}
+    <div class="col-6 col-md-4">
+      <div class="card text-center">
+        <div class="card-body">
+          <h3 class="card-title">{{this.nombre}}</h3>
+          <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
+              class="numero-text">{{this.direccion.numero}}</span></p>
+          <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
+          <p><b>PIN:</b> {{this.pin}}</p>
+          <a href="/restaurante/{{this.id}}" class="btn btn-primary">Añadir Menu</a>
+          <input class="id-editar hidden" value="{{this.id}}">
+          <button class="btn button-name-editar" data-toggle="modal" data-target="#exampleModal"><i
+              class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
+          <form action="/api/restaurante/{{this.id}}/borrar" method="POST">
+            <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
+          </form>
+        </div>
+
       </div>
-
     </div>
-  </div>
 
-  {{/each}}
+    {{/each}}
 
-</div>
-
-
-
-<div>
-<img id="socialDistance" src="/images/distanciamiento-social-restaurante_23-2148545623.jpg" alt="Restaurante">
   </div>
 
 
 
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-  aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Edita tu restaurante</h5>
-      </div>
-      <div class="modal-body">
-        <form class="edit-container " id="profile-container" action="/api/restaurante/{{this.id}}/editar" method="POST">
-          <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
-          <input class="profileElement" type="text" id="nombreRestauranteEdit" name="nombre" value="{{this.nombre}}" />
-          <p class="profileElement"><b>Direccion</b></p>
-          <label class="profileElement" for="calle"><b>Calle</b></label>
-          <input class="profileElement" type="text" id="calleRestauranteEdit" name="calle"
-            value="{{this.direccion.calle}}" />
-          <label class="profileElement" for="numero"><b> Numero</b></label>
-          <input class="profileElement" type="text" id="numeroRestauranteEdit" name="numero"
-            value="{{this.direccion.numero}}" />
-          <label class="profileElement" for="horario"><b> Horario</b></label>
-          <input class="profileElement" type="text" id="horarioRestauranteEdit" name="horario"
-            value="{{this.horario}}" />
-          <div class="modal-footer"></div>
+  <div>
+    <img id="socialDistance" src="/images/distanciamiento-social-restaurante_23-2148545623.jpg" alt="Restaurante">
+  </div>
+
+
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edita tu restaurante</h5>
+        </div>
+        <div class="modal-body">
+          <form class="edit-container " id="profile-container" action="/api/restaurante/{{this.id}}/editar"
+            method="POST">
+            <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
+            <input class="profileElement" type="text" id="nombreRestauranteEdit" name="nombre"
+              value="{{this.nombre}}" />
+            <p class="profileElement"><b>Direccion</b></p>
+            <label class="profileElement" for="calle"><b>Calle</b></label>
+            <input class="profileElement" type="text" id="calleRestauranteEdit" name="calle"
+              value="{{this.direccion.calle}}" />
+            <label class="profileElement" for="numero"><b> Numero</b></label>
+            <input class="profileElement" type="text" id="numeroRestauranteEdit" name="numero"
+              value="{{this.direccion.numero}}" />
+            <label class="profileElement" for="horario"><b> Horario</b></label>
+            <input class="profileElement" type="text" id="horarioRestauranteEdit" name="horario"
+              value="{{this.horario}}" />
+            <div class="modal-footer"></div>
             <button type="submit" class="btn btn-primary">Guardar Restaurante</button>
-          </div>
+        </div>
         </form>
       </div>
     </div>
