@@ -1,5 +1,4 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -10,9 +9,19 @@ a {
 }
 #boton-logout{
   border: none;
-  margin-left: 15px;
+  background-color: #080808;
+  color: white;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  outline: none;
 }
+
+.navbar{
+  border-radius:0px!important;
+}
+
 .Title {
+
   width: 100%;
   text-align: center;
   background-color: cornflowerblue;
@@ -219,6 +228,7 @@ text-align: center;
 #price-element{
   margin-right: 20px;
 }
+
 // DISPLAY MENU
 #displayMenu-Title {
   text-align: center;
@@ -235,3 +245,4 @@ text-align: center;
 #prize {
   text-align: end
 }
+
