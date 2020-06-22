@@ -1,12 +1,14 @@
+ {{> navBarPartial}}
+
 <!-- TITULO -->
 <h2 id="creaMenuTitle">Crea tu  Menu para el restaurante: {{ this.restaurante.nombre}}</h2>
 
 <div id="form">
 
-  <h2 class="subTitle">Crea tu  Menu</h2>
+  <h2 class="subTitle">Crea tus categorias</h2>
   <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
-    <label for="nombreMenu">Nombre del Menú</label>
-    <input type="text" id="nombreMenu" name="nombreMenu" />
+    <label for="nombreMenu">Nombre de la categoria</label>
+    <input type="text" id="nombreCategoria" name="nombreCategoria" />
      <input type="hidden"  id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}"> 
     <button type="submit">Guardar menu </button>
 
@@ -14,14 +16,13 @@
 </div>
 
 <ul id="menu-listing">
-{{#each menus}}
-
+{{#each categoria}}
 
 
 <div class="crudOpsContainer">
-  <li id="menuName">{{this.nombreMenu}}</li>
-<a class="editLink" href="/menu/{{this.id}}/editar">Editar</a>
-<form action="/menu/{{this._id}}/borrar" method="POST">
+  <li id="menuName">{{this.nombreCategoria}}</li>
+<a class="editLink" href="/menu/{{this._id}}/editar">Editar</a>
+<form action="/restaurante/{{this._id}}/borrar" method="POST">
 <button type="submit">Borrar</button>
 </form>
 </div>

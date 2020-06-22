@@ -1,5 +1,6 @@
 //Esquema del restaurante
-const { Schema, model } = require('mongoose')
+const { Schema, model } = require('mongoose');
+const mongoose = require('mongoose');
 
 const restauranteSchema = new Schema({
   nombre: {
@@ -19,13 +20,16 @@ const restauranteSchema = new Schema({
     },
   },
   horario: String,
-  pin:Number, 
+  pin: Number,
   // logo:
   // {
   //   data: Buffer,
   //   contentType: String
   // },
-  userId: String
+  userId: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Usuario"
+  }
 })
 
 module.exports = model('Restaurante', restauranteSchema)

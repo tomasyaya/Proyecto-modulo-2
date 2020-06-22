@@ -50,6 +50,9 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
+hbs.registerPartials(__dirname + 'views/partials');
+
 
 
 // Titulo
@@ -60,8 +63,8 @@ app.locals.title = 'Mybar';
 const index = require('./routes/index');
 app.use('/', index);
 
-const menu = require('./routes/menu');
-app.use('/', menu);
+const categoria = require('./routes/categoria');
+app.use('/', categoria);
 
 const elementoMenu = require('./routes/elementoMenu');
 app.use('/', elementoMenu);

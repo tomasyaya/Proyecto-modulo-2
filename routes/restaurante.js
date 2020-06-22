@@ -34,6 +34,7 @@ router.post('/restaurante', async (req, res, next) => {
   }
 })
 
+//Ruta POST editar restaurante
 router.post('/api/restaurante/:id/editar', async (req, res, next) => {
   try {
     const { nombre, calle, numero, horario } = req.body;
@@ -51,6 +52,7 @@ router.post('/api/restaurante/:id/editar', async (req, res, next) => {
 }
 })
 
+//Ruta POST borrar restaurante
 router.post('/api/restaurante/:id/borrar', async(req,res,next)=>{
   try{
     const restauranteBorrado= await Restaurante.findByIdAndRemove(req.params.id);

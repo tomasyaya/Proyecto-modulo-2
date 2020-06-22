@@ -1,19 +1,22 @@
+<div class="container">
 {{#each restaurante}}
 <h1 id="displayMenu-Title">{{this.nombre}}</h1>
 {{/each}}
 
-{{#each menus}}
-<div class="menu-page">
-  <button class="menu-name" >{{this.nombre}}</button>
-  <div class="hidden menu-container">
-    {{#each this.elementos}}
-    <br>
-    <div id="element">{{this.nombre}}</div> <div id="prize"> {{this.precio}} €</div>
-    {{/each}}
+  {{#each categorias}}
+  <div class="menu-page">
+    <button class="menu-name">{{this.nombre}}</button>
+    <div class="hidden menu-container">
+      {{#each this.elementos}}
+      <br>
+      <div id="element">{{this.nombre}}</div>
+      <div id="prize"> {{this.precio}} €</div>
+      {{/each}}
+    </div>
   </div>
+
+  <br>
+
+
+  {{/each}}
 </div>
-
-<br>
-
-
-{{/each}}

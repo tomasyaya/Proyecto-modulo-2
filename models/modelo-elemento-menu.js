@@ -1,5 +1,6 @@
 //Esquema de los elementos del menú
 const {Schema,model} = require('mongoose');
+const mongoose = require('mongoose');
 
 const elementoMenuSchema = new Schema({
   nombre: {
@@ -8,7 +9,10 @@ const elementoMenuSchema = new Schema({
     type: String
   },
    precio: Number,
-   idMenu: String
+   idCategoria: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Categoria"
+  }
 })
 
 module.exports = model('elementoMenu', elementoMenuSchema)

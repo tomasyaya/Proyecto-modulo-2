@@ -4,56 +4,41 @@ const {
 const router = new Router();
 const mongoose = require('mongoose');
 const ElementoMenu = require('../models/modelo-elemento-menu');
-const Menu = require('../models/modelo-menu');
+const Categoria = require('../models/modelo-categoria');
 
 //Ruta POST elemento menú
-router.post('/elemento', (req, res, next) => {
-  const {
-    nombre,
-    precio,
-    idMenu
-  } = req.body;
-  ElementoMenu.create({
-    nombre: nombre,
-    precio: precio,
-    idMenu: idMenu
-  })
-  
-    .then(menu => {
-      console.log("Elemento del menu creado con exito: ", menu )
-      res.redirect(`/menu/${idMenu}/editar`)
-    })
-    .catch(error => console.log(error))
+router.post('/elemento', async (req, res, next) => {
+  try {
+    const { nombre, precio, idCategoria } = req.body;
+    const elemento = await ElementoMenu.create({ nombre: nombre, precio: precio, idCategoria: idCategoria });
+    console.log("Elemento de la categoria creada con exito: ", elemento);
+    res.redirect(`/menu/${idCategoria}/editar`)
+  } catch (err) {
+    next(err)
+  }
 });
-//Ruta GET elemento específico del menú
-router.get('/menu/:id/editar', (req, res, next) => {
-  Menu.findById(req.params.id)
-    .then(menu => {
-      //Busqueda del elemento del menú
-      ElementoMenu.find({
-          idMenu: req.params.id
-        })
-        .then(elementosMenu => {
-          res.render('menu/editMenu', {
-            elementosMenu: elementosMenu,
-            menu: menu,
-            idMenu: req.params.id
-          })
-        })
-        .catch(error => console.log(error))
-    })
-    .catch(error => console.log(error))
-});
+
+//Ruta GET actualiza los elementos del menu 
+router.get('/menu/:id/editar', async (req,res,next)=>{
+  try{
+    const categoria = await Categoria.findById(req.params.id);
+    const elementosMenu= await  ElementoMenu.find({idCategoria: req.params.id});
+    res.render('menu/editMenu', {elementosMenu: elementosMenu,categoria: categoria,idCategoria: req.params.id})
+  }catch(err){
+    next(err)
+  } 
+})
+
 //Ruta POST borrar elemento específico del menú
 router.post('/elemento/:id/borrar', (req, res, next) => {
   ElementoMenu.findByIdAndRemove(req.params.id)
-  
-    .then(elementoMenu => { res.redirect(`/menu/${elementoMenu.idMenu}/editar`)
-    console.log("Elemento borrado con exito", elementoMenu )
+    .then(elementoMenu => {
+      res.redirect(`/menu/${elementoMenu.idCategoria}/editar`)
+      console.log("Elemento borrado con exito", elementoMenu)
     })
-    
     .catch(e => console.log(e))
 });
+
 // Ruta GET mostrar elemento específico del menú 
 //acabado?????
 router.get('/elemento/:id/editar', (req, res, next) => {
