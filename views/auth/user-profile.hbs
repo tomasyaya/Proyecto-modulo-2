@@ -2,8 +2,10 @@
 <!-- TITULO -->
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
 <!-- FORMULARIO DE CREACION DE RESTAURANTE -->
+<div>
+<button id="addRestaurantButton" class="addRestaurante" type="submit">Añade un nuevo Restaurante</button>
+</div>
 <div class="container">
-  <button id="addRestaurantButton" class="addRestaurante" type="submit">Añadir Restaurante</button>
 
   <form class="hidden" id="profile-container" action="/restaurante" method="POST">
     <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
