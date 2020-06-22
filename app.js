@@ -63,16 +63,22 @@ app.locals.title = 'Mybar';
 const index = require('./routes/index');
 app.use('/', index);
 
+const restaurante = require('./routes/restaurante');
+app.use('/', restaurante);
+
+const menu = require('./routes/menu');
+app.use('/', menu);
+
 const categoria = require('./routes/categoria');
 app.use('/', categoria);
 
 const elementoMenu = require('./routes/elementoMenu');
 app.use('/', elementoMenu);
 
-const restaurante = require('./routes/restaurante');
-app.use('/', restaurante);
-
 const listado = require('./routes/listado');
 app.use('/', listado);
+
+
+
 
 module.exports = app;

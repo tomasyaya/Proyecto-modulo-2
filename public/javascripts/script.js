@@ -35,12 +35,24 @@ $(document).ready(function () {
     formulario.find("#horarioRestauranteEdit").val(horario); 
     let id = $(this).parent().find(".id-editar").val();
     formulario.attr("action", `/api/restaurante/${id}/editar`);
-
-
-
   })
 
-  
+  $("#tipoDeMenu").change(function (event){
+    let selec=$(this).val();
+    if(selec=="menu"){
+      $(this).parent().find(".labelNombreMenu").show();
+      $(this).parent().find(".inputNombreMenu").removeClass("hidden");
+      $(this).parent().find(".labelPrecio").show();
+      $(this).parent().find(".inputPrecio").removeClass("hidden");
+    }
+    else{
+      $(this).parent().find(".labelNombreMenu").hide();
+      $(this).parent().find(".inputNombreMenu").addClass("hidden");
+      $(this).parent().find(".labelPrecio").hide();
+      $(this).parent().find(".inputPrecio").addClass("hidden");
+    }
+    
+  })
   
 
 })

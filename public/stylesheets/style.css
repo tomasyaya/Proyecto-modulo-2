@@ -216,4 +216,13 @@ footer {
 #prize {
   text-align: end; }
 
+.labelPrecio {
+  display: none; }
+
+.labelNombreMenu {
+  display: none; }
+
+.listaMenu {
+  margin-top: 25px; }
+
 /*# sourceMappingURL=style.css.map */
