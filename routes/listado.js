@@ -1,8 +1,9 @@
 const { Router } = require('express');
 const router = new Router();
 const mongoose = require('mongoose');
-const Categoria = require('../models/modelo-categoria');
 const Restaurante = require('../models/modelo-restaurante');
+const Menu = require('../models/modelo-menu');
+const Categoria = require('../models/modelo-categoria');
 const ElementoMenu = require('../models/modelo-elemento-menu');
 const async = require('async')
 
@@ -21,6 +22,7 @@ const async = require('async')
 router.get('/:pin', async (req, res, next) => {
   try{
     const restaurante = await Restaurante.findOne({pin:req.params.pin});
+    //const menu= await Menu.findOne({idMenu:})
     const categorias = await Categoria.find({ idRestaurante: restaurante.id });
     misCategorias = [];
     for (let i = 0; i < categorias.length; ++i) {
@@ -30,7 +32,9 @@ router.get('/:pin', async (req, res, next) => {
         elementos: elementos
       });
     }
-    res.render('listado/restaurante', { categorias: misCategorias, restaurante: restaurante })
+    res.render('listado/restaurante', { categorias: misCategorias, restaurante: restaurante ,
+      //menu:menu
+    })
   }
   catch(err){
     next(err)

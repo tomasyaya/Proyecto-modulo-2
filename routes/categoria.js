@@ -4,15 +4,24 @@ const {
 const router = new Router();
 const mongoose = require('mongoose');
 const Categoria = require('../models/modelo-categoria');
+const Menu = require('../models/modelo-menu');
 const Restaurante = require('../models/modelo-restaurante');
 
 //Ruta GET restaurante específico
 router.get('/restaurante/:id',async(req,res,next)=>{
   const restaurante = await Restaurante.findById(req.params.id);
-  const categoria= await Categoria.find({idRestaurante: req.params.id});
+  const menu= await Menu.find({idRestaurante: req.params.id});
+  let categorias=null;
+  let idMenu = req.query.idmenu;
+  if (typeof(idMenu) !== "undefined"){
+    categorias= await Categoria.find({idMenu: idMenu});
+  }
   res.render('menu/crearMenu', {
-    categoria: categoria,
-    restaurante: restaurante
+    categorias: categorias,
+    menu:menu,
+    restaurante: restaurante,
+    idMenu:idMenu
+
   });
 })
 
@@ -22,13 +31,16 @@ router.post('/menu/:id/crear', async(req, res, next)=>{
   try{
     const nombreCategoria = req.body.nombreCategoria;
     const idRestaurante = req.params.id;
-    const categoria = await Categoria.create({nombreCategoria: nombreCategoria,idRestaurante: idRestaurante})
-    res.redirect(`/restaurante/${idRestaurante}`)
+    const idMenu=req.body.idMenu;
+    const categoria = await Categoria.create({nombreCategoria: nombreCategoria,
+      idRestaurante: idRestaurante, idMenu:idMenu})
+    res.redirect(`/restaurante/${idRestaurante}?idmenu=${idMenu}`)
   }
   catch(err){
     next(err)
   } 
 })
+
 //Ruta POST para editar categoria
 router.post('/menu/:id', async (req, res, next) => {
   try{
