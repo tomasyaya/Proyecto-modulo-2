@@ -201,12 +201,16 @@ right:20px
   margin-bottom: 15px;
 }
 #menu-listing {
-  text-align: center;
+  text-align: right;
   list-style: none;
   background-color: cornflowerblue;
   border-radius: 15px;
   padding: 1%;
   
+}
+#listing-container {
+  width: 50%;
+  text-align: center;
 }
 .crudOpsContainer {
   display: flex;

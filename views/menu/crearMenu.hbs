@@ -2,7 +2,7 @@
 <!-- TITULO -->
   <h2 class="Title">Crea tu Menu para el restaurante: {{ this.restaurante.nombre}}</h2>
 <!-- FORMULARIO SELECCIÓN TIPO MENU -->
-<div class="container">
+
   
   <form action="/tipomenu/{{restaurante.id}}/crear" method="post">
     <label for="tipoMenu">Escoge</label>
@@ -39,6 +39,7 @@
   </div>
 {{/if}}
 <!-- LISTADO CATEGORIAS MENU -->
+<div id="listing-container" >
   <ul id="menu-listing">
     {{#each categorias}}
 
@@ -51,5 +52,4 @@
     </div>
     {{/each}}
   </ul>
-
 </div>
