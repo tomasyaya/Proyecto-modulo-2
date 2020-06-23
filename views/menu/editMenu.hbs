@@ -2,14 +2,14 @@
     {{> navBarPartial}}
 </div>
 <!-- TITULO -->
-<h2 id="editMenuTitle">Edita Categoria: {{this.categoria.nombreCategoria}}</h2>
+<h2 class="Title">Edita Categoria: {{this.categoria.nombreCategoria}}</h2>
 
 
 <div id="center-container">
     <form id="editName" action="/menu/{{this.categoria.id}}" method="POST">
         <label for=""><b> Nombre de la categoria</b></label>
         <input type="text" id="nombreMenu" name="nombreCategoria" value="{{this.categoria.nombreCategoria}}">
-        <button type="submit">Guardar</button>
+        <button class="button" type="submit">Guardar</button>
     </form>
 
     <br>
@@ -18,27 +18,32 @@
         <label for=""><b> Elemento</b></label>
         <input type="text" id="elementoMenu" name="nombre">
         <br>
+        <br>
         <label for="" id="price-element"><b> Precio</b></label>
         <input type="text" id="precio" name="precio">
         <input type="hidden" id="categoria" name="idCategoria" value="{{this.categoria.id}}">
         <br>
-        <button type="submit">Guardar</button>
+        <br>
+        <button class="button" type="submit">Guardar</button>
     </form>
 </div>
+<!-- ELEMENTOS MENU -->
 <ul id="element-listing">
     {{#each elementosMenu}}
     <div class="crudOpsContainer">
-        <li>
+        <li id="crudElement">
             {{this.nombre}}
             {{this.precio}} $</li>
-        <br>
+  
         <a class="editLink" href="/elemento/{{this._id}}/editar">Editar</a>
         <form action="/elemento/{{this._id}}/borrar" method="POST">
-            <button type="submit">Borrar</button>
+            <button class="button" type="submit">Borrar</button>
         </form>
 
     </div>
     {{/each}}
 </ul>
-
-<a href="/restaurante/{{categoria.idRestaurante}}">Volver a mis categorias</a>
+<!-- LINK VOLVER -->
+<div id="backLink">
+<a  href="/restaurante/{{categoria.idRestaurante}}">Volver a mis categorias</a>
+</div>

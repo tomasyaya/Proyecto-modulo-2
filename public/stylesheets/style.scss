@@ -47,6 +47,7 @@ a {
   
 }
 .homeCard {
+  font-size: 80%;
   text-align: center;
   width: 30%;
   background-color: cornflowerblue;
@@ -64,7 +65,7 @@ footer{
   border-radius: 15px;
 }
 .cardImg {
-  width: 25%;
+  width: 40%;
 }
 #irMenu {
   border-radius: 15px;
@@ -169,8 +170,9 @@ right:20px
   padding: 7px;
   display: block;
   margin: auto;
-
 }
+
+
 //CREAR MENU
 #creaMenuTitle {
   width: 100%;
@@ -178,7 +180,14 @@ right:20px
   background-color: cornflowerblue;
   margin-bottom: 60px;
 }
-
+.subTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 30px;
+  padding: 1%;
+  border-radius: 15px;
+} 
 #creaMenu-container {
   width: 100%;
   display: flex;
@@ -194,11 +203,27 @@ right:20px
 #menu-listing {
   text-align: center;
   list-style: none;
+  background-color: cornflowerblue;
+  border-radius: 15px;
+  padding: 1%;
+  
 }
 .crudOpsContainer {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  margin-bottom: 1%;
+  
+}
+#crudElement {
+  margin-right: 2%;
+}
+.deleteButton {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 7px;
 }
 #menuName {
   margin-right: 20px;
@@ -220,11 +245,13 @@ text-align: center;
 }
 #editElementPrice {
   text-align: center;
+  margin-bottom: 3%;
 }
 
 #element-listing {
   text-align: center;
   list-style: none;
+  margin-bottom:8%;
 }
 .subTitle {
   text-align: center;
@@ -237,6 +264,17 @@ text-align: center;
 
 #price-element{
   margin-right: 20px;
+}
+#backLink {
+  
+  text-align: center;
+}
+.button {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 7px;
 }
 
 // DISPLAY MENU
