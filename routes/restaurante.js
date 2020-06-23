@@ -4,12 +4,15 @@ const {
 const router = new Router();
 const mongoose = require('mongoose');
 const Restaurante = require('../models/modelo-restaurante');
+const uploadCloud = require('../configs/cloudinary');
 
 //Ruta POST crear restaurante
-router.post('/restaurante', async (req, res, next) => {
+router.post('/restaurante',uploadCloud.single('logo'), async (req, res, next) => {
   try {
     const { nombre, calle, numero, horario } = req.body;
     const userId = req.session.currentUser;
+    const logoNombre = req.file.originalName
+    const logoUrl =req.file.path
     const numeroRestaurantes = await Restaurante.find();
     let pin = 1000;
     if (numeroRestaurantes.length != 0) {
@@ -24,7 +27,9 @@ router.post('/restaurante', async (req, res, next) => {
       nombre: nombre, direccion: { calle: calle, numero: numero },
       horario: horario,
       userId: userId,
-      pin: pin
+      pin: pin,
+      logoNombre: logoNombre,
+      logoUrl: logoUrl
     })
     console.log(nuevoRestaurante)
     res.redirect('/user-profile')
