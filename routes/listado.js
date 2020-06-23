@@ -39,7 +39,8 @@ router.get('/:pin', async (req, res, next) => {
           elementos: elementos
         });
       }
-      misMenus.push({ nombre: menu.nombreMenu, precio: menu.precio, tipo: menu.tipoDeMenu, categorias: categorias })
+      misMenus.push({ nombre: menu.nombreMenu, precio: menu.precio, tipo: menu.tipoDeMenu, categorias: misCategorias })
+    console.log("misMneus",misMenus)
     }
 
     res.render('listado/restaurante', {
