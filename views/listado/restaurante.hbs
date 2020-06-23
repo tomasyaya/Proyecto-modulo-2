@@ -3,6 +3,7 @@
 
 {{#each menus}}
   {{this.nombre}}
+  {{#if menus.tipodeMenu=="carta"}}
   {{#each this.categorias}}
   <div class="menu-page">
     <button class="menu-name">{{this.nombre}}</button>
@@ -14,6 +15,8 @@
       {{/each}}
     </div>
   </div>
+  {{/if}}
+  
 
   <br>
 
