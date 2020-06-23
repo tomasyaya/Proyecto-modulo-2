@@ -7,7 +7,7 @@
 </div>
 <div class="container">
 
-  <form class="hidden" id="profile-container" action="/restaurante" method="POST">
+  <form class="hidden" id="profile-container" action="/restaurante" method="POST" enctype="multipart/form-data">
     <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
     <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
 
@@ -19,6 +19,9 @@
 
     <label class="profileElement" for="horario"><b> Horario</b></label>
     <input class="profileElement" type="text" id="horario" name="horario" />
+
+    <label for="logo">Logo</label>
+    <input type="file" name="logo">
 
     {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
@@ -36,6 +39,7 @@
       <div class="card text-center">
         <div class="card-body">
           <h3 class="card-title">{{this.nombre}}</h3>
+          <img src={{this.logoUrl}} alt="">
           <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>

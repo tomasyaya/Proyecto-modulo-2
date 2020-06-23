@@ -21,11 +21,9 @@ const restauranteSchema = new Schema({
   },
   horario: String,
   pin: Number,
-  // logo:
-  // {
-  //   data: Buffer,
-  //   contentType: String
-  // },
+  logoNombre: String,
+  logoUrl: String,
+
   userId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Usuario"
