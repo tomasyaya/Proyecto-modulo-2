@@ -1,15 +1,15 @@
 <div class="container">
-{{#each restaurante}}
-<h1 class="Title">{{this.nombre}}</h1>
-{{/each}}
+<h1 class="Title">{{restaurante.nombre}}</h1>
 
-  {{#each categorias}}
+{{#each menus}}
+  {{this.nombre}}
+  {{#each this.categorias}}
   <div class="menu-page">
-    <button class="menu-name">{{this.nombre}}</button>
+    <button class="menu-name">{{this.nombre}}nombre</button>
     <div class="hidden menu-container">
       {{#each this.elementos}}
       <br>
-      <div id="element">{{this.nombre}}</div>
+      <div id="element">{{this.nombre}}ELEMENTO</div>
       <div id="prize"> {{this.precio}} €</div>
       {{/each}}
     </div>
@@ -17,6 +17,6 @@
 
   <br>
 
-
   {{/each}}
+ {{/each}} 
 </div>

@@ -20,26 +20,36 @@ const async = require('async')
 
 
 router.get('/:pin', async (req, res, next) => {
-  try{
-    const restaurante = await Restaurante.findOne({pin:req.params.pin});
-    //const menu= await Menu.findOne({idMenu:})
-    const categorias = await Categoria.find({ idRestaurante: restaurante.id });
-    misCategorias = [];
-    for (let i = 0; i < categorias.length; ++i) {
-      let elementos = await ElementoMenu.find({ idCategoria: categorias[i].id })
-      misCategorias.push({
-        nombre: categorias[i].nombreCategoria,
-        elementos: elementos
-      });
+  try {
+    const restaurante = await Restaurante.findOne({ pin: req.params.pin });
+    const menus = await Menu.find({ idRestaurante: restaurante._id });
+    console.log(menus)
+    let misMenus = [];
+    for (let i = 0; i < menus.length; ++i) {
+      let menu = menus[i];
+      const categorias = await Categoria.find({ idMenu: menu.id });
+      console.log(categorias)
+      let misCategorias = [];
+      console.log(misCategorias)
+      for (let i = 0; i < categorias.length; ++i) {
+        let elementos = await ElementoMenu.find({ idCategoria: categorias[i].id })
+        console.log(elementos)
+        misCategorias.push({
+          nombre: categorias[i].nombreCategoria,
+          elementos: elementos
+        });
+      }
+      misMenus.push({ nombre: menu.nombreMenu, precio: menu.precio, tipo: menu.tipoDeMenu, categorias: categorias })
     }
-    res.render('listado/restaurante', { categorias: misCategorias, restaurante: restaurante ,
-      //menu:menu
+
+    res.render('listado/restaurante', {
+      menus: misMenus, restaurante: restaurante,
     })
   }
-  catch(err){
+  catch (err) {
     next(err)
-  }  
+  }
 })
-  
+
 
 module.exports = router;
