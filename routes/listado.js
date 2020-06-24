@@ -22,7 +22,13 @@ const async = require('async')
 router.get('/:pin', async (req, res, next) => {
   try {
     const restaurante = await Restaurante.findOne({ pin: req.params.pin });
-    const menus = await Menu.find({ idRestaurante: restaurante._id });
+    let menus_no = await Menu.find({ idRestaurante: restaurante._id });
+    let menus = menus_no.sort(function(a,b){
+        if (a.tipoDeMenu==="carta"){
+          return 1;
+        }
+        return -1;
+    });
     console.log(menus)
     let misMenus = [];
     for (let i = 0; i < menus.length; ++i) {
@@ -39,7 +45,12 @@ router.get('/:pin', async (req, res, next) => {
           elementos: elementos
         });
       }
-      misMenus.push({ nombre: menu.nombreMenu, precio: menu.precio, tipo: menu.tipoDeMenu, categorias: misCategorias })
+      misMenus.push({
+        isCarta :menu.tipoDeMenu=="carta", 
+        nombre: menu.nombreMenu, 
+        precio: menu.precioMenu, 
+        tipo: menu.tipoDeMenu, 
+        categorias: misCategorias })
     console.log("misMneus",misMenus)
     }
 
