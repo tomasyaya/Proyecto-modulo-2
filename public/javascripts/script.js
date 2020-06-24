@@ -7,20 +7,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
 $(document).ready(function () {
 
+  //boton añadir restaurante
   $(".addRestaurante").click(event => {
     $("#profile-container").toggleClass("hidden");
   });
 
+  //introducir PIN 
   $(".irMenu").click(event => {
     let pin = $(".pinInput").val();
     window.location.href = `/${pin}`
   })
 
+  //CATEGORIAS DE LA CARTA
   $(".menu-name").click(function (event) {
     $(this).parent().find(".menu-container").toggleClass("hidden");
   });
 
-
+  //editar restaurante
   $(".button-name-editar").click(function (event){
     let $this=$(this);
     let $box=$this.parent();
@@ -37,6 +40,7 @@ $(document).ready(function () {
     formulario.attr("action", `/api/restaurante/${id}/editar`);
   })
 
+  //selectionar tipo de menu (carta o menu)
   $("#tipoDeMenu").change(function (event){
     let selec=$(this).val();
     if(selec=="menu"){

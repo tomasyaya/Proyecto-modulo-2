@@ -1,9 +1,11 @@
 <div class="container">
-{{#each restaurante}}
-<h1 class="Title">{{this.nombre}}</h1>
-{{/each}}
+  <h1 class="Title">{{restaurante.nombre}}</h1>
 
-  {{#each categorias}}
+  {{#each menus}}
+
+
+  {{#if this.isCarta}}
+  {{#each this.categorias}}
   <div class="menu-page">
     <button class="menu-name">{{this.nombre}}</button>
     <div class="hidden menu-container">
@@ -16,7 +18,21 @@
   </div>
 
   <br>
+  {{/each}}
 
+  {{else}}
 
+  <button class="menu-name">{{this.nombre}} </button>
+
+  {{#each this.categorias}}
+  <h2>{{this.nombre}}</h2>
+  {{#each this.elementos}}
+  <br>
+  <div id="element">{{this.nombre}} </div>
+
+  {{/each}}  
+    {{../this.precio}}€
+  {{/each}}
+  {{/if}}
   {{/each}}
 </div>
