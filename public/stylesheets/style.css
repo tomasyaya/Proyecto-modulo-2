@@ -271,6 +271,9 @@ footer {
 .labelNombreMenu {
   display: none; }
 
+.labelInfoMenu {
+  display: none; }
+
 .listaMenu {
   margin-top: 25px; }
 

@@ -1,6 +1,7 @@
 <div class="container">
-  <h1 class="Title">{{restaurante.nombre}}</h1>
 
+  <h1 class="Title">{{restaurante.nombre}}</h1>
+  <img src="{{restaurante.logoUrl}}">
   {{#each menus}}
 
 
@@ -23,17 +24,19 @@
   {{else}}
 
   <button class="menu-name">{{this.nombre}} </button>
+  <div class="hidden menu-container">
+    {{#each this.categorias}}
+    <h2>{{this.nombre}}</h2>
+    {{#each this.elementos}}
+    <br>
+    <div id="element">{{this.nombre}} </div>
+    {{/each}}
 
-  {{#each this.categorias}}
-  <h2>{{this.nombre}}</h2>
-  {{#each this.elementos}}
-  <br>
-  <div id="element">{{this.nombre}} </div>
-
-  {{/each}}  
-    
-  {{/each}}
-  {{this.precio}}€
-  {{/if}}
-  {{/each}}
+    {{/each}}
+    {{this.infoMenu}}
+    <br>
+    {{this.precio}}€
+    {{/if}}
+    {{/each}}
+  </div>
 </div>
