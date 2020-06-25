@@ -3,30 +3,48 @@
 <h2 class="Title">Bienvenido {{usuario.nombre}}</h2>
 <!-- FORMULARIO DE CREACION DE RESTAURANTE -->
 <div>
-<button id="addRestaurantButton" class="addRestaurante" type="submit">Añade un nuevo Restaurante</button>
+  <button id="addRestaurantButton" class="addRestaurante" data-toggle="modal"
+    data-target="#exampleModal1">Añade un nuevo Restaurante</button>
 </div>
 <div class="container">
 
-  <form class="hidden" id="profile-container" action="/restaurante" method="POST" enctype="multipart/form-data">
-    <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
-    <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
+  <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Añade tu restaurante</h5>
+        </div>
+        <div class="modal-body">
+          <form class="hidden" id="profile-container" action="/restaurante" method="POST" enctype="multipart/form-data">
+            <label class="profileElement" for="nombre"><b>Nombre del restaurante</b></label>
+            <input class="profileElement" type="text" id="nombreRestaurante" name="nombre" />
 
-    <p class="profileElement"><b>Direccion</b></p>
-    <label class="profileElement" for="calle"><b>Calle</b></label>
-    <input class="profileElement" type="text" id="calle" name="calle" />
-    <label class="profileElement" for="numero"><b> Numero</b></label>
-    <input class="profileElement" type="text" id="numero" name="numero" />
+            <p class="profileElement"><b>Direccion</b></p>
+            <label class="profileElement" for="calle"><b>Calle</b></label>
+            <input class="profileElement" type="text" id="calle" name="calle" />
+            <label class="profileElement" for="numero"><b> Numero</b></label>
+            <input class="profileElement" type="text" id="numero" name="numero" />
 
-    <label class="profileElement" for="horario"><b> Horario</b></label>
-    <input class="profileElement" type="text" id="horario" name="horario" />
+            <label class="profileElement" for="horario"><b> Horario</b></label>
+            <input class="profileElement" type="text" id="horario" name="horario" />
 
-    <label for="logo">Logo</label>
-    <input type="file" name="logo">
+            <label for="logo">Logo</label>
+            <input type="file" name="logo">
 
-    {{!-- <label for="logo">Logo</label>
+            <div class="modal-footer"></div>
+            <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
-    <button id="saveRestaurantButton" class="profileElement" type="submit">Guardar Restaurante</button>
-  </form>
+
 
 
 
@@ -99,4 +117,3 @@
     </div>
   </div>
 </div>
-

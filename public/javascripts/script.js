@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   //boton añadir restaurante
   $(".addRestaurante").click(event => {
-    $("#profile-container").toggleClass("hidden");
+    $("#profile-container").removeClass("hidden");
   });
 
   //introducir PIN 
