@@ -4,8 +4,8 @@ const mongoose = require('mongoose');
 const menuSchema = new Schema({
   tipoDeMenu:{
     type: String,
-    enum:['Carta','Menu'], 
-    default:'Carta'
+    enum:['carta','menu'], 
+    default:'carta'
   },
   nombreMenu: String,
   idRestaurante: {
