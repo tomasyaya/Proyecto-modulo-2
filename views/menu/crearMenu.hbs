@@ -1,47 +1,51 @@
 {{> navBarPartial}}
 <!-- TITULO -->
-  <h2 class="Title">Crea tu Menu para el restaurante: {{ this.restaurante.nombre}}</h2>
+<h2 class="Title">Crea tu Menu para el restaurante: {{ this.restaurante.nombre}}</h2>
 <!-- FORMULARIO SELECCIÓN TIPO MENU -->
 
-  
-  <form action="/tipomenu/{{restaurante.id}}/crear" method="post">
-    <label for="tipoMenu">Escoge</label>
-    <select id="tipoDeMenu" name="tipoDeMenu">
-      <option value="carta">Carta</option>
-      <option value="menu">Menu</option>
-    </select>
-    <label class="labelNombreMenu" for="nombreMenu">Nombre</label>
-    <input type="text" class="inputNombreMenu hidden" id="nombreMenu" name="nombreMenu">
-    <label for="precioMenu" class="labelPrecio">Precio</label>
-    <input type="text" id="precioMenu" class="inputPrecio hidden" name="precioMenu">
-    <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
-    <textarea type="text" id="infoMenu" class="inputInfoMenu hidden" name="infoMenu"></textarea>
-    <input type="submit">
-  </form>
+
+<form action="/tipomenu/{{restaurante.id}}/crear" method="post">
+  <label for="tipoMenu">Escoge</label>
+  <select id="tipoDeMenu" name="tipoDeMenu">
+    <option value="carta">Carta</option>
+    <option value="menu">Menu</option>
+  </select>
+  <label class="labelNombreMenu" for="nombreMenu">Nombre</label>
+  <input type="text" class="inputNombreMenu hidden" id="nombreMenu" name="nombreMenu">
+  <label for="precioMenu" class="labelPrecio">Precio</label>
+  <input type="text" id="precioMenu" class="inputPrecio hidden" name="precioMenu">
+  <label for="infoMenu" class="labelInfoMenu ">Información adicional</label>
+  <textarea type="text" id="infoMenu" class="inputInfoMenu hidden" name="infoMenu"></textarea>
+  <input type="submit">
+</form>
 
 <!-- SUBTITULO DEL MENU ESCOGIDO -->
-  <ul class="nav nav-tabs nav-justified listaMenu">
-    {{#each menu}}
-      <li class=""><a href="/restaurante/{{this.idRestaurante}}?idmenu={{this.id}}">{{this.tipoDeMenu}}</a></li>
-    {{/each}}
-  </ul>
+<ul class="nav nav-tabs nav-justified listaMenu">
+  {{#each menu}}
+  <li class=""><a href="/restaurante/{{this.idRestaurante}}?idmenu={{this.id}}">{{this.tipoDeMenu}}</a></li>
+  <form action="/tipodemenu/{{this.idRestaurante}}/borrar?idmenu={{this.id}}" method="POST">
+    <button class=" btn btn-danger restaurant-delete"><i class="fa fa-trash-o"></i></button>
+  </form>
+  {{/each}}
+</ul>
+
 <!-- FORMULARIO EDITAR CATEGORIAS MENU -->
 {{#if idMenu}}
-  <div id="form ">
+<div id="form ">
 
-    <h2 class="subTitle">Crea tus categorias</h2>
+  <h2 class="subTitle">Crea tus categorias</h2>
 
-    <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
-      <label for="nombreMenu">Nombre de la categoria</label>
-      <input type="text" id="nombreCategoria" name="nombreCategoria" />
-      <input type="hidden" id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}">
-      <input type="hidden" id="idMenutipo" name="idMenu" value="{{idMenu}}" />
-      <button type="submit">Guardar menu </button>
-    </form>
-  </div>
+  <form id="menuCreate" action="/menu/{{restaurante.id}}/crear" method="POST">
+    <label for="nombreMenu">Nombre de la categoria</label>
+    <input type="text" id="nombreCategoria" name="nombreCategoria" />
+    <input type="hidden" id="idRestaurante" name="idRestaurante" value="{{restaurante.id}}">
+    <input type="hidden" id="idMenutipo" name="idMenu" value="{{idMenu}}" />
+    <button type="submit">Guardar menu </button>
+  </form>
+</div>
 {{/if}}
 <!-- LISTADO CATEGORIAS MENU -->
-<div id="listing-container" >
+<div id="listing-container">
   <ul id="menu-listing">
     {{#each categorias}}
 
