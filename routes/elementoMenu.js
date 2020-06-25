@@ -19,14 +19,14 @@ router.post('/elemento', async (req, res, next) => {
 });
 
 //Ruta GET actualiza los elementos del menu 
-router.get('/menu/:id/editar', async (req,res,next)=>{
-  try{
+router.get('/menu/:id/editar', async (req, res, next) => {
+  try {
     const categoria = await Categoria.findById(req.params.id);
-    const elementosMenu= await  ElementoMenu.find({idCategoria: req.params.id});
-    res.render('menu/editMenu', {elementosMenu: elementosMenu,categoria: categoria,idCategoria: req.params.id})
-  }catch(err){
+    const elementosMenu = await ElementoMenu.find({ idCategoria: req.params.id });
+    res.render('menu/editMenu', { elementosMenu: elementosMenu, categoria: categoria, idCategoria: req.params.id })
+  } catch (err) {
     next(err)
-  } 
+  }
 })
 
 //Ruta POST borrar elemento específico del menú
@@ -40,9 +40,16 @@ router.post('/elemento/:id/borrar', (req, res, next) => {
 });
 
 // Ruta GET mostrar elemento específico del menú 
-//acabado?????
-router.get('/elemento/:id/editar', (req, res, next) => {
-
+router.post('/elemento/:id/editar', async (req, res, next) => {
+  try {
+    const { nombre, precio } = req.body;
+    const elemento = await ElementoMenu.findByIdAndUpdate(req.params.id, 
+      { $set: { nombre, precio } }, { new: true });
+      console.log(elemento)
+    res.redirect(`/menu/${elemento.idCategoria}/editar`)
+  }catch (err) {
+    next(err)
+  }
 })
 
 

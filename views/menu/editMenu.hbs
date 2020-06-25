@@ -32,12 +32,21 @@
     {{#each elementosMenu}}
     <div class="crudOpsContainer">
         <li id="crudElement">
-            {{this.nombre}}
-            {{this.precio}} $</li>
-  
-        <a class="editLink" href="/elemento/{{this._id}}/editar">Editar</a>
+            <span class="elemento-nombre">{{this.nombre}}</span>
+            <span class="elemento-precio">{{this.precio}} €</span></li>
+
+        <button class="btn button-elemento-editar" data-toggle="modal" data-target="#exampleModal"><i
+                class="fa fa-pencil-square-o" aria-hidden="true"></i></button>
         <form action="/elemento/{{this._id}}/borrar" method="POST">
-            <button class="button" type="submit">Borrar</button>
+            <button class="button button-remove-element" type="submit">Borrar</button>
+        </form>
+
+        <form action='/elemento/{{this.id}}/editar' method="POST">
+            <input type="text" id="edit-element" class="input-edit-elemento hidden" name="nombre"
+                value="{{this.nombre}}">
+            <input type="text" id="edit-precio" class="input-edit-element-precio hidden" name="precio"
+                value="{{this.precio}}">
+            <button type="submit" class="btn btn-primary editar-elemento hidden">Guardar</button>
         </form>
 
     </div>
@@ -45,5 +54,5 @@
 </ul>
 <!-- LINK VOLVER -->
 <div id="backLink">
-<a  href="/restaurante/{{categoria.idRestaurante}}">Volver a mis categorias</a>
+    <a href="/restaurante/{{categoria.idRestaurante}}">Volver a mis categorias</a>
 </div>

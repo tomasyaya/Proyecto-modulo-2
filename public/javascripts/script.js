@@ -56,9 +56,20 @@ $(document).ready(function () {
       $(this).parent().find(".inputNombreMenu").addClass("hidden");
       $(this).parent().find(".labelPrecio").hide();
       $(this).parent().find(".inputPrecio").addClass("hidden");
-    }
+    } 
+  })
+
+  //formulario editar elemento
+
+  $(".button-elemento-editar").click(function (event){
+    $(".button-elemento-editar").addClass("hidden");
+    $(".button-remove-element").addClass("hidden");
+    $(this).parent().find(".elemento-nombre").addClass("hidden");
+    $(this).parent().find(".elemento-precio").addClass("hidden");
+    $(this).parent().find(".editar-elemento").removeClass("hidden");
+    $(this).parent().find(".input-edit-elemento").removeClass("hidden");
+    $(this).parent().find(".input-edit-element-precio").removeClass("hidden");
     
   })
-  
 
 })
