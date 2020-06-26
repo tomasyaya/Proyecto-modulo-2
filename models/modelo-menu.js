@@ -12,7 +12,8 @@ const menuSchema = new Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Restaurante"
   },
-  precioMenu: Number
+  precioMenu: Number, 
+  infoMenu: String
 })
 
 module.exports = model('Menu', menuSchema)

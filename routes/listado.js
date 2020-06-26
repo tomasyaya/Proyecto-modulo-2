@@ -50,6 +50,7 @@ router.get('/:pin', async (req, res, next) => {
         nombre: menu.nombreMenu, 
         precio: menu.precioMenu, 
         tipo: menu.tipoDeMenu, 
+        infoMenu:menu.infoMenu,
         categorias: misCategorias })
     console.log("misMneus",misMenus)
     }

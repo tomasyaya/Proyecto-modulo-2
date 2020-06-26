@@ -9,7 +9,7 @@ $(document).ready(function () {
 
   //boton añadir restaurante
   $(".addRestaurante").click(event => {
-    $("#profile-container").toggleClass("hidden");
+    $("#profile-container").removeClass("hidden");
   });
 
   //introducir PIN 
@@ -48,6 +48,8 @@ $(document).ready(function () {
       $(this).parent().find(".inputNombreMenu").removeClass("hidden");
       $(this).parent().find(".labelPrecio").show();
       $(this).parent().find(".inputPrecio").removeClass("hidden");
+      $(this).parent().find(".labelInfoMenu").show();
+      $(this).parent().find(".inputInfoMenu").removeClass("hidden");
     }
     else{
       $(this).parent().find(".labelNombreMenu").hide();
