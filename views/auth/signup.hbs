@@ -16,9 +16,11 @@
     <button class="Button" class="signupElement" type="submit">Crear cuenta</button>
 
     {{!-- error message will be added here --}}
-    {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-  {{/if}}
+  {{#if errorMessage}}
+    <div id="errorMessage">
+      <p class="error"><b> {{errorMessage}}</b></p>
+    </div>
+    {{/if}}
 
   </form>
 </div>

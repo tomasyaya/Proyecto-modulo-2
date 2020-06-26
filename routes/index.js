@@ -84,7 +84,7 @@ router.post("/signup", (req, res) => {
           //Error de validacion
           if (error instanceof mongoose.Error.ValidationError) {
             res.status(400).render('auth/signup', {
-              errorMessage: error.message
+              errorMessage: "Formato de email inválido, intentelo de nuevo."
             });
             //Error de duplicidad
           } else if (error.code === 11000) {
