@@ -17,6 +17,18 @@ router.post('/tipomenu/:id/crear', async (req, res, next) => {
   } 
 })
 
+router.post('/tipodemenu/:id/borrar', async (req,res,next)=>{
+  try{
+    const idRestaurante= req.params.id;
+    let idMenu = req.query.idmenu;
+    const menu= await Menu.findByIdAndRemove(idMenu);
+    res.redirect(`/restaurante/${idRestaurante}`)
+  }
+  catch (err) {
+    next(err)
+  }
+})
+
 
 
 module.exports = router;
