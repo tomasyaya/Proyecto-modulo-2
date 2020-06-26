@@ -105,44 +105,27 @@ router.post("/signup", (req, res) => {
 router.get('/login', (req, res) => res.render('auth/login'))
 
 //Ruta POST inicio sesion
-router.post('/login', (req, res, next) => {
-  const {
-    email,
-    password
-  } = req.body;
-  //Comprobracion de que todods los campos han sido introducidos
+router.post('/login', async (req, res, next) => {
+  const { email, password } = req.body;
   if (email === '' || password === '') {
     res.render('auth/login', {
-      errorMessage: 'Por favor introduzca ambos campos para continuar'
-    });
+      errorMessage: 'Por favor introduzca ambos campos para continuar'});
     return;
   }
-  //Buscamos usuario por mail
-  Usuario.findOne({
-      email
-    })
-    .then(usuario => {
-      if (!usuario) {
-        //Si no hay usuario con ese mail, no esta registrado. Cortarmos ejecución y mostramos error
-        res.render('auth/login', {
-          errorMessage: 'Este Email no esta registrado, pruebe otro'
-        });
-        return;
-        //Comprobración de contraseña
-      } else if (bcrypt.compare(password, usuario.passwordHash)) {
-        req.session.currentUser = usuario
-        console.log(password, usuario.passwordHash)
-        console.log(bcrypt.compare(password, usuario.passwordHash))
-        res.redirect("user-profile")
-      } else {
-        // Si la contraseña no es correcta, mostramos error
-        res.render('auth/login', {
-          errorMessage: 'Contraseña incorrecta.'
-        });
-      }
-    })
-    .catch(error => next(error));
+  const usuario = await Usuario.findOne({ email })
+  if (!usuario) {
+    res.render('auth/login', {
+      errorMessage: 'Este Email no esta registrado, pruebe otro'});
+    return;
+  } else if (await bcrypt.compare(password, usuario.passwordHash)) {
+    req.session.currentUser = usuario
+    res.redirect("user-profile")
+  } else {
+    res.render('auth/login', {
+      errorMessage: 'Contraseña incorrecta.'});
+  }
 });
+
 //Ruta POST logout
 router.post('/logout', (req, res, next) => {
   req.session.destroy();
