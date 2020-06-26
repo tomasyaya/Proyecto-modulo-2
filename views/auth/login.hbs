@@ -13,8 +13,10 @@
 
     <button class="Button" class="loginElement" type="submit">Inicio sesión</button>
 
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
+   {{#if errorMessage}}
+    <div id="errorMessage">
+      <p class="error"><b> {{errorMessage}}</b></p>
+    </div>
     {{/if}}
   </form>
 </div>

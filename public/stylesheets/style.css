@@ -277,4 +277,26 @@ footer {
 .listaMenu {
   margin-top: 25px; }
 
+#logoMenuDisplay {
+  display: block;
+  margin: auto;
+  margin-bottom: 2%; }
+
+#errorMessage {
+  margin-top: 20px;
+  width: 30%;
+  background-color: #DC5757;
+  border-radius: 15px;
+  padding: 1%;
+  text-align: center;
+  color: white; }
+
+#errorImg {
+  display: block;
+  margin: auto;
+  width: 50%; }
+
+.errormsg {
+  text-align: center; }
+
 /*# sourceMappingURL=style.css.map */
