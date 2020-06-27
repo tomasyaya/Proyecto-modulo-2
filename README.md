@@ -43,20 +43,30 @@ En fase avanzada usaremos la plataforma para construir una herramienta de gesti�
 - **/restaurante/ID/introducir menú => Formulario introducción elementos menú**
 
 ## Models:
-
-Local:
+Usuario:
 - **Nombre: String**
+- **Email: String**
 - **Contraseña**
+```
+```
+
+Restaurante:
+- **Nombre: String**
 - **Dirección: String**
 - **Horario:**
-- **Menu:[ArrayDeElementosDeMenu]:**
+- **Menu:[Menus]:**
 - **Logo:**
+```
+```
+Menú:
+- **Nombre del menu: String**
+- **idRestaurante: String**,
+- **Menu:[ArrayDeElementosDeMenu]:**
 ```
 ```
 
 Elemento del Menú:
-- **categoria: String**,
-- **idLocal: String**,
+- **idMenu: String**,
 - **Nombre: String**,
 - **Precio: String**,
 - **Imagen:**,
@@ -64,12 +74,18 @@ Elemento del Menú:
 ```
 
 ## Wireframes
+Restaurante
+![restaurante1](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/restaurante1.png)
+
 
 ![Wiframe2](https://github.com/CorreiaAlberto/Proyecto-modulo-2/blob/master/wiframes/Wiframe2.png)
+
+
 
 ## Links
 
 KANBAN : https://trello.com/b/52ZhFMBf/proyecto
+
 
 ### Git
 

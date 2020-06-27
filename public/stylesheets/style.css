@@ -1,8 +1,312 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif; }
 
 a {
   color: #00B7FF; }
+
+#boton-logout {
+  border: none;
+  background-color: #080808;
+  color: white;
+  padding-top: 13px;
+  padding-bottom: 15px;
+  outline: none; }
+
+.navbar {
+  border-radius: 0px !important; }
+
+.Title {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 30px;
+  padding: 1%;
+  border-radius: 15px; }
+
+.intro {
+  text-align: center;
+  margin-bottom: 60px; }
+
+.pinSearch {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 60px; }
+
+#homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+.homeCard {
+  font-size: 80%;
+  text-align: center;
+  width: 30%;
+  background-color: cornflowerblue;
+  padding: 3%;
+  border-radius: 15px;
+  margin-bottom: 2%; }
+
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background-color: #222;
+  padding: 1%;
+  border-radius: 15px; }
+
+.cardImg {
+  width: 40%; }
+
+#irMenu {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 7px; }
+
+#pin {
+  border-radius: 15px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 3%;
+  margin-right: 3%; }
+
+#signup-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2%;
+  border-radius: 15px; }
+
+.signupElement {
+  font-size: larger;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  padding: 7px; }
+
+.Button {
+  margin-top: 2%;
+  width: 30%;
+  color: white;
+  background-color: #222;
+  border-radius: 15px;
+  padding: 7px; }
+
+#login-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.loginElement {
+  font-size: larger;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 5px;
+  border-radius: 15px;
+  padding: 7px; }
+
+#profile-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.profileElement {
+  font-size: larger;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 5px; }
+
+.card {
+  text-align: center; }
+
+#cardLogo {
+  max-width: 80%;
+  height: auto; }
+
+#saveRestaurantButton {
+  color: white;
+  background-color: cornflowerblue; }
+
+#addRestaurantButton {
+  color: white;
+  background-color: cornflowerblue; }
+
+#socialDistance {
+  width: 30%;
+  height: auto;
+  position: absolute;
+  bottom: 10px;
+  right: 20px; }
+
+#addRestaurantButton {
+  margin-top: 2%;
+  width: 30%;
+  color: white;
+  background-color: #222;
+  border-radius: 15px;
+  padding: 7px;
+  display: block;
+  margin: auto; }
+
+#creaMenuTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px; }
+
+.subTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 30px;
+  padding: 1%;
+  border-radius: 15px; }
+
+#creaMenu-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+
+.creaMenuElement {
+  font-size: larger;
+  width: 30%;
+  text-align: center;
+  margin-bottom: 15px; }
+
+#listing-container {
+  width: 50%;
+  text-align: center; }
+
+.crudOpsContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 1%; }
+
+#crudElement {
+  margin-right: 2%; }
+
+.deleteButton {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 7px; }
+
+#menuName {
+  margin-right: 20px; }
+
+.editLink {
+  margin-right: 10px;
+  margin-bottom: 15px; }
+
+#editMenuTitle {
+  width: 100%;
+  text-align: center;
+  background-color: cornflowerblue;
+  margin-bottom: 60px; }
+
+#editName {
+  text-align: center; }
+
+#editElementPrice {
+  text-align: center;
+  margin-bottom: 3%; }
+
+#element-listing {
+  text-align: center;
+  list-style: none;
+  margin-bottom: 8%; }
+
+.subTitle {
+  text-align: center;
+  margin-bottom: 3%; }
+
+#menuCreate {
+  text-align: center;
+  margin-bottom: 3%; }
+
+#price-element {
+  margin-right: 20px; }
+
+#backLink {
+  text-align: center; }
+
+.button {
+  border-radius: 15px;
+  color: white;
+  background-color: #222;
+  border: none;
+  padding: 7px; }
+
+#displayMenu-Title {
+  text-align: center;
+  width: 100%;
+  background-color: cornflowerblue; }
+
+.menu-name {
+  width: 100%;
+  color: white;
+  background-color: #222;
+  padding: 20px;
+  border: none; }
+
+#prize {
+  text-align: end; }
+
+.labelPrecio {
+  display: none; }
+
+.labelNombreMenu {
+  display: none; }
+
+.labelInfoMenu {
+  display: none; }
+
+.listaMenu {
+  margin-top: 25px; }
+
+#logoMenuDisplay {
+  display: block;
+  margin: auto;
+  margin-bottom: 2%; }
+
+#menu-especial {
+  margin-bottom: 20px;
+  width: 100%;
+  color: white;
+  background-color: #222;
+  padding: 20px;
+  border: none; }
+
+#errorMessage {
+  margin-top: 20px;
+  width: 30%;
+  background-color: #DC5757;
+  border-radius: 15px;
+  padding: 1%;
+  text-align: center;
+  color: white; }
+
+#errorImg {
+  display: block;
+  margin: auto;
+  width: 50%; }
+
+#notFoundImg {
+  display: block;
+  margin: auto;
+  width: 50%; }
+
+.errormsg {
+  text-align: center; }
 
 /*# sourceMappingURL=style.css.map */

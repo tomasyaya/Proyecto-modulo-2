@@ -1,5 +1,4 @@
 require('dotenv').config();
-
 const bodyParser   = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express      = require('express');
@@ -9,7 +8,7 @@ const mongoose     = require('mongoose');
 const logger       = require('morgan');
 const path         = require('path');
 
-
+//Conexion bases de datos
 mongoose
   .connect('mongodb://localhost/proyectomodulo2', {useNewUrlParser: true})
   .then(x => {
@@ -25,6 +24,10 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 const app = express();
 const crearSession=require('./configs/session.config');
 crearSession(app);
+app.use(function (req, res, next) {
+  res.locals.session = req.session;
+  next();
+});
 
 
 // Middleware Setup
@@ -47,15 +50,35 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+hbs.registerPartials(path.join(__dirname, 'views/partials'));
+hbs.registerPartials(__dirname + 'views/partials');
 
 
-// default value for title local
-app.locals.title = 'Mybar';
+
+// Titulo
+app.locals.title = 'MyMenu';
 
 
 
 const index = require('./routes/index');
 app.use('/', index);
+
+const restaurante = require('./routes/restaurante');
+app.use('/', restaurante);
+
+const menu = require('./routes/menu');
+app.use('/', menu);
+
+const categoria = require('./routes/categoria');
+app.use('/', categoria);
+
+const elementoMenu = require('./routes/elementoMenu');
+app.use('/', elementoMenu);
+
+const listado = require('./routes/listado');
+app.use('/', listado);
+
+
 
 
 module.exports = app;
