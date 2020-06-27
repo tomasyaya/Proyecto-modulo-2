@@ -56,7 +56,7 @@ hbs.registerPartials(__dirname + 'views/partials');
 
 
 // Titulo
-app.locals.title = 'Mybar';
+app.locals.title = 'MyMenu';
 
 
 
