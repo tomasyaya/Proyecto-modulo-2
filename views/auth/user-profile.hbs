@@ -40,16 +40,10 @@
     </div>
   </div>
 
-
-
   {{!-- <label for="logo">Logo</label>
   <input type="file" name="logo" >--}}
 
-
-
-
-
-
+<!-- CARD RESTAURANTE -->
   <div class="row">
 
     {{#each restaurante}}
@@ -57,7 +51,7 @@
       <div class="card text-center">
         <div class="card-body">
           <h3 class="card-title">{{this.nombre}}</h3>
-          <img src={{this.logoUrl}} alt="">
+          <img id="cardLogo" src={{this.logoUrl}} alt="">
           <p><b> Calle: </b><span class="calle-text">{{this.direccion.calle}} </span><b> Numero:</b> <span
               class="numero-text">{{this.direccion.numero}}</span></p>
           <p><b>Horario:</b> <span class="horario-text">{{this.horario}}</span></p>
@@ -77,8 +71,6 @@
     {{/each}}
 
   </div>
-
-
 
   <div>
     <img id="socialDistance" src="/images/distanciamiento-social-restaurante_23-2148545623.jpg" alt="Restaurante">
