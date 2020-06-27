@@ -11,8 +11,6 @@ router.post('/restaurante',uploadCloud.single('logo'), async (req, res, next) =>
   try {
     const { nombre, calle, numero, horario } = req.body;
     const userId = req.session.currentUser;
-    const logoNombre = req.file.originalName
-    const logoUrl =req.file.path
     const numeroRestaurantes = await Restaurante.find();
     let pin = 1000;
     if (numeroRestaurantes.length != 0) {
@@ -23,14 +21,19 @@ router.post('/restaurante',uploadCloud.single('logo'), async (req, res, next) =>
       let mayor = ordenados[total - 1];
       pin = mayor.pin + 1;
     }
-    const nuevoRestaurante = await Restaurante.create({
+    const datos = {
       nombre: nombre, direccion: { calle: calle, numero: numero },
       horario: horario,
       userId: userId,
       pin: pin,
-      logoNombre: logoNombre,
-      logoUrl: logoUrl
-    })
+     
+    }
+    if (req.file) {
+      datos.logoNombre = req.file.originalName
+      datos.logoUrl = req.file.path
+    }
+    const nuevoRestaurante = await Restaurante.create(datos)
+
     console.log(nuevoRestaurante)
     res.redirect('/user-profile')
   }
