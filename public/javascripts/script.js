@@ -20,8 +20,13 @@ $(document).ready(function () {
 
   //CATEGORIAS DE LA CARTA
   $(".menu-name").click(function (event) {
+    $(this).parent().find(".menu-container1").toggleClass("hidden");
+  });
+
+  $("#menu-especial").click(function (event) {
     $(this).parent().find(".menu-container").toggleClass("hidden");
   });
+  
 
   //editar restaurante
   $(".button-name-editar").click(function (event){
